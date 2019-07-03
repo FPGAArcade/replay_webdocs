@@ -1,5 +1,6 @@
 ---
 home: true
-heroImage: /hero.jpg
+heroImage: /images/hero.jpg
+footer: © 2019 FPGA Arcade Team - All Rights Reserved
 ---
 
