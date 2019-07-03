@@ -1,3 +1,5 @@
-# Documentation
+---
+home: true
+heroImage: /hero.jpg
+---
 
-Coming soon(tm).

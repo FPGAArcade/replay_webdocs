@@ -1,4 +1,4 @@
 module.exports = {
-    title: 'FPGA Arcade Documentation',
-    description: 'Coming Soon(tm)'
-  }
+  title: 'FPGA Arcade - Documentation',
+  description: 'Coming Soon(tm)'
+}
