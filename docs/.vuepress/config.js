@@ -1,6 +1,6 @@
 module.exports = {
-  title: 'FPGA Arcade - Documentation',
-  description: 'Coming Soon(tm)',
+  title: 'FPGA Arcade',
+  description: 'Documentation for FPGA Arcade projects.',
 
   themeConfig: {
     // GitHub Integration
