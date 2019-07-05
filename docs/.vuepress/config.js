@@ -22,7 +22,33 @@ module.exports = {
         //   {text: 'MKR Vidor 4000', link: '/manual/vidor/'}
         // ]}
       {text: 'Contribute', link: '/contributing'}
-    ]
-  }
+    ],
 
+    sidebar: {
+      '/guide/': [
+        {
+          title: 'Getting Started',
+          path: '/guide/',
+          collapsable: false,
+
+          // Getting Started Guides
+          children: [
+            {
+              title: 'Replay 1',
+              path: '/guide/replay1/',
+              children: [
+                '/guide/replay1/hardware',
+              ]
+            },
+            '/guide/vidor/'
+          ],
+        } ],
+
+      // Fallback
+      '/': [
+        '/contributing'
+      ]
+    }
+
+  }
 }

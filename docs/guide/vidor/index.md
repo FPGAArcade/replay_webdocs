@@ -1,3 +1,3 @@
-# MKR Vidor4000 - Getting Started
+# MKR Vidor 4000
 
 Coming Soon(tm)
