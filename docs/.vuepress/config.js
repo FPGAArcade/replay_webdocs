@@ -10,6 +10,19 @@ module.exports = {
     editLinks: true,
 
     // Misc
-    lastUpdated: true
+    lastUpdated: true,
+
+    nav: [
+      {text: 'Guide', items: [
+        {text: 'Replay 1', link: '/guide/replay1/'},
+        {text: 'MKR Vidor 4000', link: '/guide/vidor/'}
+      ]},
+      // {text: 'User Manual', items: [
+        //   {text: 'Replay 1', link: '/manual/replay1/'},
+        //   {text: 'MKR Vidor 4000', link: '/manual/vidor/'}
+        // ]}
+      {text: 'Contribute', link: '/contributing'}
+    ]
   }
+
 }
