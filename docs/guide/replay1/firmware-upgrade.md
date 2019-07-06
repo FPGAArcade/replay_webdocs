@@ -24,7 +24,7 @@ lost, instructions to recover will be added soon(tm).
 
 If you have an SD Card setup with the "loader" core in the root. Then
 copy the rAppUpdater contents to a dated sub-directory and load the appropriate
-rApp_*.ini files. Generally the rApp_NTSC_60FPS.ini or rApp_PAL_50FPS.ini are
+rApp_*.ini file. Generally the rApp_NTSC_60FPS.ini or rApp_PAL_50FPS.ini is
 a good choice for DVI/HDMI connections.
 
 ::: vue
