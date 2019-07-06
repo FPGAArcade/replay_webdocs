@@ -19,7 +19,10 @@ In order to use your Replay board you will need a few additional items:
 
 ## Power Supply
 
-The Replay 1 can be powered via either the 5V DC socket or the 12V Molex socket.
+The Replay 1 can be powered via either the 5V DC socket or the 12V Molex socket, located
+just to the right of the Power On/Off switch.
+
+![Replay Power Connections](/images/overview_replay1_power.jpg)
 
 The 5V DC socket takes a 2.1mm (5.5mm outer) center pin positive male plug supplying
 at least 1A.
@@ -32,33 +35,38 @@ a [Pico PSU](https://www.logicsupply.com/eu-en/picopsu-80/) connected to either 
 ATX power adapter.
 
 ::: tip
-The molex socket is the recommended way to power your board especially when the
-optional 68060 Daughter Board is connected.
+We recommend powering your board via the Molex socket, especially when the
+optional 68060 Daughter Board is attached.
 :::
 
 ## Video Cable
 
 <!-- TODO: Link to jamma info/cable -->
-The replay provides several ways to connect to a display with the main connection
-via the rear DVI socket. Alternatives include jamma and depending on your Replay
-board revision, composite.
-
-The DVI socket can be used either direct to a DVI compatible monitor or connected
-to a HDMI monitor via DVI/HDMI adapter.
+The replay provides several ways to connect to a display with the main
+connection via the rear DVI-I socket. Alternatives include a jamma expansion port
+and depending on your Replay board revision, composite out.
 
 ::: tip
-Audio over DVI/HDMI is not supported on the Replay 1. You will need to
-use the 3.5mm stereo socket for audio output or the jamma expansion port.
+Audio over DVI/HDMI is not supported on the Replay 1. For audio output you will
+need to use the 3.5mm stereo socket or the jamma expansion port.
 :::
 
-In addition a DVI/VGA adapter enables connection to a VGA compatible monitor.
+The DVI-I socket can be connected direct to a DVI compatible monitor or
+via a DVI/HDMI or DVI/VGA adapter.
 
-Users wishing to connect to a TV that that has available Scart sockets can use a
-VGA/Scart cable to do so. This allows Cores that output a 15KHz video signal to
-run "native" without the need for enabling the scanline doubler.
+::: tip
+Some of the replicated hardware output non-standard video signals. If you encounter
+any issues when using DVI or HDMI, try connecting via VGA. It is more forgiving
+and offers the widest range of monitor compatibility.
+:::
 
-For ease of use and the widest monitor compatibility, we recommend users connect
-to monitors via VGA using a DVI/VGA adapter when possible.
+If you own a TV with Scart sockets, you may wish to run some cores at their native
+15KHz video signal. Scart TVs will support a 15KHz signal and remove the need
+for for enabling the scanline doubler. Suitable VGA to Scart cables can be purchased
+from a variety of stores including [amedia](https://www.amedia-computer.com/en/accessories/2-vga-to-scart-cable-for-minimig.html).
+
+A pin-out for building your own cable is available on the [mist
+wiki](https://github.com/mist-devel/mist-board/wiki/ScartCable#diagram).
 
 <!--
 ### Useful Extras
