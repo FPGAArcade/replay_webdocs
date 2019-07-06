@@ -38,15 +38,17 @@ module.exports = {
               title: 'Replay 1',
               path: '/guide/replay1/',
               children: [
-                '/guide/replay1/hardware',
-                '/guide/replay1/sd-setup',
-                '/guide/replay1/firmware-upgrade',
-                '/guide/replay1/troubleshooting',
+                'replay1/',
+                'replay1/hardware',
+                'replay1/sd-setup',
+                'replay1/firmware-upgrade',
+                'replay1/troubleshooting',
               ]
             },
             '/guide/vidor/'
           ],
-        } ],
+        }
+      ],
 
       // Fallback
       '/': [

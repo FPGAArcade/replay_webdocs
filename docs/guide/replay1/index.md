@@ -1,6 +1,4 @@
-# Replay 1
-
-## Overview
+# Overview
 
 The Replay board is a high quality base platform for the development and usage
 of “cores“.
