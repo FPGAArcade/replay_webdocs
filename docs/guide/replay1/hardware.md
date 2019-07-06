@@ -44,7 +44,7 @@ optional 68060 Daughter Board is attached.
 <!-- TODO: Link to jamma info/cable -->
 The replay provides several ways to connect to a display with the main
 connection via the rear DVI-I socket. Alternatives include a jamma expansion port
-and depending on your Replay board revision, composite out.
+and depending on your Replay board revision, SVHS and composite out.
 
 ::: tip
 Audio over DVI/HDMI is not supported on the Replay 1. For audio output you will
