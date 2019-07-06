@@ -8,6 +8,12 @@ The zip contains two folders which correspond to the two different methods you
 can use to update your Replay's firmware. rAppUpdater for upgrades via SD Card
 and usbUpdater for (surprisingly) upgrading over USB.
 
+To check your Replay's current firmware version, boot any core and bring up
+the OSD (F11). The current Firmware version is displayed on the first line
+after "ARM | FW:".
+
+<!-- TODO: screenshot showing firmware version on OSD -->
+
 ::: tip Note
 If your Replay's existing firmware is _very_ old or your Replay's firmware
 has been corrupted, you may be unable to use either of these methods. All is not
