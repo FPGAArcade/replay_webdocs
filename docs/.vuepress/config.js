@@ -56,6 +56,21 @@ module.exports = {
         '/contributing'
       ]
     }
+  },
 
-  }
+  // Plugins
+  plugins: [
+
+    ['container', {
+      type: 'vue',
+      before: '<pre class="vue-container"><code>',
+      after: '</code></pre>',
+    }]
+    // ['container', {
+    //   type: 'upgrade',
+    //   before: info => `<UpgradePath title="${info}">`,
+    //   after: '</UpgradePath>',
+    // }]
+
+  ]
 }
