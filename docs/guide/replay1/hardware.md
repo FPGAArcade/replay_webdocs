@@ -23,7 +23,7 @@ backplate. The board will fit in mostly any standard case on the market.
 
 ## Power Supply
 
-The board can be powered via either the 5V DC socket or use a standard 4 pin
+The board can be powered via either the 5V DC socket or a standard 4 pin
 Molex plug from an ATX power supply. Both sockets are located just to the right
 of the Power On/Off switch. With a maximum current draw of 700mA (3.5W), the board
 runs quite cool with no additional heat sink or fans required.
@@ -36,7 +36,7 @@ supplying at least 1A.
 To keep the board size down and also cost, there is no ATX power connector
 mounted. If you want to use an ATX power supply there is an adapter board sold
 separately by [FPGA Arcade (EUR)](https://www.amedia-computer.com/en/accessories/35-atx-power-adapter-fpga-arcade.html)
-and [CBMStuff (US)](https://web.archive.org/web/20190629010521/https://www.cbmstuff.com/proddetail.php?prod=RPSI)
+and [CBMStuff (US)](https://www.cbmstuff.com/proddetail.php?prod=RPSI)
 
 For small form factor builds a [Pico PSU](https://www.logicsupply.com/eu-en/picopsu-80/)
 can be used in place of a standard ATX power supply.
