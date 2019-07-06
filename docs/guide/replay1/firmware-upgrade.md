@@ -23,9 +23,10 @@ lost, instructions to recover will be added soon(tm).
 ## Upgrade via SD Card
 
 If you have an SD Card setup with the "loader" core in the root. Then
-copy the rAppUpdater contents to a dated sub-directory and load the appropriate
-rApp_*.ini file. Generally the rApp_NTSC_60FPS.ini or rApp_PAL_50FPS.ini is
-a good choice for DVI/HDMI connections.
+copy the rAppUpdater contents to a dated sub-directory.
+
+Refer to the [SD Card Setup](sd-setup) section if you are unsure about how to
+organise your SD Card files.
 
 ::: vue
 /
@@ -52,12 +53,15 @@ a good choice for DVI/HDMI connections.
 └── ...
 :::
 
-Refer to the [SD Card Setup](sd-setup) section if you are unsure about how to
-organise your SD Card files.
+Boot your Replay and load the appropriate rApp_*.ini file. Generally the
+rApp_NTSC_60FPS.ini or rApp_PAL_50FPS.ini is a good choice for DVI/HDMI
+connections.
+
+After that, it is very much a case of following the on screen prompts.
 
 The rAppUpdater upon loading, will verify the checksum for all update files and
-if all is well, prompt you to press "F" to flash the new firmware. The "Flashing"
-screen will then appear.
+prompt you to press "F" to flash the new firmware. The "Flashing" screen will
+then appear.
 
 ::: danger Warning
 Do NOT power off your device whilst firmware flashing is in progress.
@@ -66,11 +70,12 @@ Do NOT power off your device whilst firmware flashing is in progress.
 Once complete you will be prompted to press "R" to reboot the board. The board
 may fail to reboot after a successful flash, a power cycle will resolve that.
 
-If any checksums fail to match you will be unable to start flashing the
-firmware. If this occurs, try copying the rApp files to the SD card again. Make
+If any checksum fails to match you will be unable to start flashing the
+firmware. Should this occurs, copying the rApp files to the SD card again. Make
 sure to safely remove/eject the SD card before physically disconnecting it from
 your computer. Removing without ejecting first may cause data loss or otherwise
-corrupt files.
+corrupt files. If this does not resolve the issue, download and extract the
+Firmware zip again.
 
 Once firmware has successfully flashed, the rAppUpdater files are no longer
 required and may be deleted from the SD Card.
