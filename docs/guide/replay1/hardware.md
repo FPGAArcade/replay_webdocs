@@ -17,22 +17,29 @@ In order to use your Replay board you will need a few additional items:
  - 3.5mm Audio cable/speakers
  - Mini-itx case
 
+The mainboard is half size mini-ITX form factor. The base is 170 by 80 mm
+and the height is under 35 mm. It optionally comes with a standard ATX
+backplate. The board will fit in mostly any standard case on the market.
+
 ## Power Supply
 
-The Replay 1 can be powered via either the 5V DC socket or the 12V Molex socket, located
-just to the right of the Power On/Off switch.
+The board can be powered via either the 5V DC socket or use a standard 4 pin
+Molex plug from an ATX power supply. Both sockets are located just to the right
+of the Power On/Off switch. With a maximum current draw of 700mA (3.5W), the board
+runs quite cool with no additional heat sink or fans required.
 
 ![Replay Power Connections](/images/overview_replay1_power.jpg)
 
-The 5V DC socket takes a 2.1mm (5.5mm outer) center pin positive male plug supplying
-at least 1A.
+The 5V DC socket accepts a 2.1mm (5.5mm outer) center pin positive male plug
+supplying at least 1A.
 
-The Molex socket accepts a standard 4 pin PC power supply cable. Whilst you can
-use a regular ATX PSU, for small form factor builds it's recommended you use
-a [Pico PSU](https://www.logicsupply.com/eu-en/picopsu-80/) connected to either the
-[FPGA Arcade (EUR)](https://www.amedia-computer.com/en/accessories/35-atx-power-adapter-fpga-arcade.html) or
-[CBMStuff (US)](https://web.archive.org/web/20190629010521/https://www.cbmstuff.com/proddetail.php?prod=RPSI)
-ATX power adapter.
+To keep the board size down and also cost, there is no ATX power connector
+mounted. If you want to use an ATX power supply there is an adapter board sold
+separately by [FPGA Arcade (EUR)](https://www.amedia-computer.com/en/accessories/35-atx-power-adapter-fpga-arcade.html)
+and [CBMStuff (US)](https://web.archive.org/web/20190629010521/https://www.cbmstuff.com/proddetail.php?prod=RPSI)
+
+For small form factor builds a [Pico PSU](https://www.logicsupply.com/eu-en/picopsu-80/)
+can be used in place of a standard ATX power supply.
 
 ::: tip
 We recommend powering your board via the Molex socket, especially when the

@@ -1,9 +1,7 @@
 <template>
   <div class="image-grid">
     <router-link :to="item.link" v-for="item in gridArray" class="image-grid__item">
-      <div>
-        <img :src="item.image" :alt="item.linkAlt || item.title" />
-      </div>
+      <img :src="item.image" :alt="item.linkAlt || item.title" />
       <div>{{ item.title }}</div>
     </router-link>
   </div>
