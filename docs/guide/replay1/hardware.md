@@ -23,6 +23,10 @@ backplate. The board will fit in mostly any standard case on the market.
 
 ## Power Supply
 
+::: danger Warning
+Using an incorrect power supply may permanently damage your Replay board
+:::
+
 The board can be powered via either the 5V DC socket or a standard 4 pin
 Molex plug from an ATX power supply. Both sockets are located just to the right
 of the Power On/Off switch. With a maximum current draw of 700mA (3.5W), the board
@@ -41,7 +45,7 @@ and [CBMStuff (US)](https://www.cbmstuff.com/proddetail.php?prod=RPSI)
 For small form factor builds a [Pico PSU](https://www.logicsupply.com/eu-en/picopsu-80/)
 can be used in place of a standard ATX power supply.
 
-::: tip
+::: tip Note
 We recommend powering your board via the Molex socket, especially when the
 optional 68060 Daughter Board is attached.
 :::
@@ -53,7 +57,7 @@ The replay provides several ways to connect to a display with the main
 connection via the rear DVI-I socket. Alternatives include a jamma expansion port
 and depending on your Replay board revision, SVHS and composite out.
 
-::: tip
+::: tip Note
 Audio over DVI/HDMI is not supported on the Replay 1. For audio output you will
 need to use the 3.5mm stereo socket or the jamma expansion port.
 :::
@@ -61,10 +65,9 @@ need to use the 3.5mm stereo socket or the jamma expansion port.
 The DVI-I socket can be connected direct to a DVI compatible monitor or
 via a DVI/HDMI or DVI/VGA adapter.
 
-::: tip
-Some of the replicated hardware output non-standard video signals. If you encounter
-any issues when using DVI or HDMI, try connecting via VGA. It is more forgiving
-and offers the widest range of monitor compatibility.
+::: tip Tip
+Older hardware often used non-standard video signals. The VGA connections is
+more forgiving and will likely offer the widest range of monitor compatibility.
 :::
 
 If you own a TV with Scart sockets, you may wish to run some cores at their native
