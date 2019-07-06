@@ -22,9 +22,10 @@ If your display has a VGA socket, it is worth connecting the Replay to it
 using a DVI-I/VGA adapter. We have found that monitors tend to be more
 forgiving of _quirky_ video signals when running over VGA.
 
+<!--
 ## SD Card Boot Failure
 
 There are several reasons the replay might fail to boot when an SD card is
 inserted.
-
+-->
 

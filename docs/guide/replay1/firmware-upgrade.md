@@ -36,16 +36,17 @@ a good choice for DVI/HDMI connections.
 ├── loader.bin
 ├── loop.pcm
 ├── Firmware/
-│   └── `20190616/`
-│       ├── rApp_NTSC_30FPS.ini
-│       ├── rApp_NTSC_60FPS.ini
-│       ├── rApp_PAL_25FPS.ini
-│       ├── rApp_PAL_50FPS.ini
-|       ├── bootrom.bin
-|       ├── main.bin
-|       ├── rApp_ARM.bin
-|       ├── rApp_FPGA.bin
-│       └── rApp_FPGA_FIXED_PAL_25FPS.bin
+│   ├── `20190616/`
+│   |   ├── rApp_NTSC_30FPS.ini
+│   |   ├── rApp_NTSC_60FPS.ini
+│   |   ├── rApp_PAL_25FPS.ini
+│   |   ├── rApp_PAL_50FPS.ini
+|   |   ├── bootrom.bin
+|   |   ├── main.bin
+|   |   ├── rApp_ARM.bin
+|   |   ├── rApp_FPGA.bin
+│   |   └── rApp_FPGA_FIXED_PAL_25FPS.bin
+│   └── 20190518/
 ├── Amiga/
 ├── Pac-Man/
 └── ...
