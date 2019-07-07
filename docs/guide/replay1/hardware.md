@@ -21,6 +21,9 @@ The mainboard is half size mini-ITX form factor. The base is 170 by 80 mm
 and the height is under 35 mm. It optionally comes with a standard ATX
 backplate. The board will fit in mostly any standard case on the market.
 
+Whilst not required, an [RS232](#rs232) cable is useful for troubleshooting
+and a USB header cable will ensure you can recover from corrupted firmware.
+
 ## Power Supply
 
 ::: danger Warning
@@ -78,8 +81,25 @@ from a variety of stores including [amedia](https://www.amedia-computer.com/en/a
 A pin-out for building your own cable is available on the [mist
 wiki](https://github.com/mist-devel/mist-board/wiki/ScartCable#diagram).
 
-<!--
-### Useful Extras
 
-RS232/USB cable, usb header cable for firmware recovery
--->
+## RS232
+
+An RS232 connection is supported via a DE-9 null modem cable.
+
+[![D9 Null Modem wiring](/images/d9_null_modem_wiring_thumb.png)](/images/d9_null_modem_wiring.png)
+
+As most modern PCs do not include a serial port anymore, a USB/RS232 adapter is
+also suggested.
+
+![RS232/USB Adapter](/images/ftdi_usb_serial.jpg)
+
+Numerous terminal applications can be used to to connect over the serial port
+such as Minicom.
+
+Terminal settings are: 115200 baud, 8 data bits, 1 stop bits, no parity, flow
+control XON/XOFF (hardware flow off, software flow on).
+
+Your terminal will display a wealth of boot and run time information that can
+be useful when diagnosing issues and reporting bugs. Keyboard passthrough also
+enables control of your Replay (to an extent) from the terminal.
+
