@@ -15,7 +15,7 @@ after "ARM | FW:".
 <!-- TODO: screenshot showing firmware version on OSD -->
 
 ::: tip Note
-If your Replay's existing firmware is _very_ old or your Replay's firmware
+If your Replay's existing firmware is _very_ old or your Replay's bootloader
 has been corrupted, you may be unable to use either of these methods. All is not
 lost, instructions to recover will be added soon(tm).
 :::
@@ -59,7 +59,7 @@ connections.
 
 After that, it is very much a case of following the on screen prompts.
 
-The rAppUpdater upon loading, will verify the checksum for all update files and
+The rAppUpdater will verify the checksum for all update files and
 prompt you to press "F" to flash the new firmware. The "Flashing" screen will
 then appear.
 
@@ -71,7 +71,7 @@ Once complete you will be prompted to press "R" to reboot the board. The board
 may fail to reboot after a successful flash, a power cycle will resolve that.
 
 If any checksum fails to match you will be unable to start flashing the
-firmware. Should this occurs, copying the rApp files to the SD card again. Make
+firmware. Should this occur, copy the rApp files to the SD card again. Make
 sure to safely remove/eject the SD card before physically disconnecting it from
 your computer. Removing without ejecting first may cause data loss or otherwise
 corrupt files. If this does not resolve the issue, download and extract the
@@ -82,4 +82,29 @@ required and may be deleted from the SD Card.
 
 ## Upgrade via USB
 
-usbUpdater...
+As an alternative to the rAppUpdater, you can flash new firmware over USB.
+
+[![USB Header](/images/overview_replay1_usb_thumb.jpg)](/images/overview_replay1_usb.jpg)
+
+You will need to connect to either the micro usb socket, or, using a standard
+PC motherboard USB cable, to P14, the 5 header pins just to the right of SD Card
+socket.
+
+::: danger Warning
+Take _extreme_ care when using the micro usb socket. It is easy to break
+away from the board. We strongly recommend using the 5 USB header pins (P14) instead.
+:::
+
+Upgrading over USB is quite straightforward.
+
+  1. If the board is switched on, switch it off first (!)
+  2. Connect a USB cable between board and PC (micro-usb or header P14)
+  3. Windows users run replay_update.bat whilst Linux/MacOS users
+     should run replay_update.sh
+  4. When you see "No device connected, polling for it now...", hold the
+     replay's multifunction button down and switch the board on
+  5. The board will be detected (patience!) and flashing begin
+  6. Release the menu button when you see the indicator dots '..'
+  7. Wait until flashing is finished and this screen disappears
+  8. The board will automatically reboot after a few seconds
+
