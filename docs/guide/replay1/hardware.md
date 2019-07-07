@@ -105,19 +105,17 @@ enables control of your Replay (to an extent) from the terminal.
 
 ## USB Header
 
-Just to the right of the SD Card slot and JTAG header you will find a 5 pin USB
+Just to the right of the SD Card slot and JTAG header is a 5 pin USB
 header (compatible with standard PC USB motherboard cables) and a micro USB
-socket which can be used to
-[flash new firmware](firmware-upgrade#upgrade-via-usb), update the bootloader
-and also mount your SD Card over USB.
+socket. These allow
+[flashing new firmware](firmware-upgrade#upgrade-via-usb), updating the bootloader
+and also mounting your SD Card over USB.
+
+Note, Pin 1 of the USB header is closest to the P14 label.
 
 [![USB Header](/images/overview_replay1_usb_thumb.jpg)](/images/overview_replay1_usb.jpg)
-
 
 ::: danger Warning
 Take _extreme_ care when using the microusb socket. It is very easy to break
 away from the board. We strongly recommend using the 5 USB header pins (P14) instead.
 :::
-
-P14, the 5 pin USB header is compatible with PC motherboard USB cables. Note,
-Pin 1 is closest to the P14 label.
