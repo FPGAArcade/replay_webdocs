@@ -12,7 +12,7 @@ and use your Replay board with a TV or Monitor.
 Once connected and powered on (without an SD card inserted) you should be
 greeted by the embeded loader core. The embedded loader does not currently offer
 many features but provides a useful way to verify your board is working without
-complicating matters with running a core off SD card.
+the added complication of running a core from the SD card.
 
 If you have a blank screen/no video signal, please refer to the
 [Troubleshooting](./troubleshooting) section for assistance.
