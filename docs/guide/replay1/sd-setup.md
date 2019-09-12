@@ -2,11 +2,12 @@
 
 The Replay loads cores at boot time from an SD card. A class 10 or faster card
 is recommended, with sizes up to 200GB tested. The card should be formatted with
-either the FAT32 or exfat file system.
+either the FAT32 or exfat. As FAT32 has a 4GB file size limitation, the use of
+exfat is recommended.
 
 ::: tip Note
-The Replay theoretically supports cards up to 2^(32+9) bits in size or ~274GB
-however only cards up to 200GB in size have been tested so far.
+The Replay theoretically supports cards up to ~2TB however only cards up to
+200GB in size have been tested so far.
 :::
 
 If you insert the now blank SD card into the Replay and power on, the Replay
