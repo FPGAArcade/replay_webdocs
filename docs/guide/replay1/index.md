@@ -17,7 +17,7 @@ the added complication of running a core from the SD card.
 If you have a blank screen/no video signal, please refer to the
 [Troubleshooting](./troubleshooting) section for assistance.
 
-::: warning
+::: tip Note
 Recent cores require an up to date firmware. Refer to the
 [Firmware Upgrade](./firmware-upgrade) instructions to check your firmware
 version and update.

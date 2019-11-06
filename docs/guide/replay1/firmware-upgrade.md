@@ -63,8 +63,10 @@ The rAppUpdater will verify the checksum for all update files and
 prompt you to press "F" to flash the new firmware. The "Flashing" screen will
 then appear.
 
-::: danger Warning
-Do NOT power off your device whilst firmware flashing is in progress.
+::: warning Take Care
+Do NOT power off your device whilst firmware flashing is in progress. Doing so
+may render your device unbootable and require recovery using
+[BOSSA](http://www.shumatech.com/web/products/bossa)
 :::
 
 Once complete you will be prompted to press "R" to reboot the board. The board
@@ -90,7 +92,7 @@ You will need to connect to either the micro usb socket, or, using a standard
 PC motherboard USB cable, to P14, the 5 header pins just to the right of SD Card
 socket.
 
-::: danger Warning
+::: warning Take Care
 Take _extreme_ care when using the micro usb socket. It is easy to break
 away from the board. We strongly recommend using the 5 USB header pins (P14) instead.
 :::

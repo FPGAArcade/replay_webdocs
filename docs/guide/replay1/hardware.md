@@ -1,9 +1,5 @@
 # Hardware
 
-::: warning
-This documentation has yet to be reviewed for accuracy
-:::
-
 <!-- TODO: What size SD cards are known to be supported?
      TODO: PSU and mains adapter specs -->
 In order to use your Replay board you will need a few additional items:
@@ -26,7 +22,7 @@ and a USB header cable will ensure you can recover from corrupted firmware.
 
 ## Power Supply
 
-::: danger Warning
+::: warning Take Care
 Using an incorrect power supply may permanently damage your Replay board
 :::
 
@@ -115,7 +111,7 @@ Note, Pin 1 of the USB header is closest to the P14 label.
 
 [![USB Header](/images/overview_replay1_usb_thumb.jpg)](/images/overview_replay1_usb.jpg)
 
-::: danger Warning
+::: warning Take Care
 Take _extreme_ care when using the microusb socket. It is very easy to break
 away from the board. We strongly recommend using the 5 USB header pins (P14) instead.
 :::

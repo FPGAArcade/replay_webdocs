@@ -1,9 +1,5 @@
 # Troubleshooting
 
-::: warning
-Incomplete documentation
-:::
-
 Experiencing issues with your Replay? If the below information does not resolve
 your problem you can seek further support via the [Community](/community).
 

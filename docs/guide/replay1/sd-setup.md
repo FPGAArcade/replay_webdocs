@@ -30,7 +30,7 @@ which contains core specific configuration information. Each core for the Replay
 ships with a corresponding pre-configured "ini" file. You will generally not need
 to edit this file with a few exceptions that will be covered below.
 
-::: warning
+::: tip Note
 A core should always be used with the replay.ini file it shipped with and when
 updating a core to a new version you should always also update the replay.ini.
 Failure to do so is the most common reason a core will fail to boot.
@@ -81,7 +81,7 @@ Adding cores is simply a matter of downloading the latest zip file for any/all o
 the cores for the Replay1 (R1) from [FPGA Arcade Releases](https://build.fpgaarcade.com/releases/cores/R1/)
 and unzipping each into its own directory on the SD card.
 
-::: warning
+::: tip Note
 Only download and use cores from the R1/ release directory. Cores for other
 platforms such as the V4 will not work with your Replay1 device.
 :::
