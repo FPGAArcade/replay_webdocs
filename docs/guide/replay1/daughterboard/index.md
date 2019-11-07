@@ -1,4 +1,4 @@
-# 68K Daughter Board Overview
+# Overview
 
 ![Replay1 Board Overview](/images/replay1/daughterboard.jpg "Replay 1 daughter board")
 

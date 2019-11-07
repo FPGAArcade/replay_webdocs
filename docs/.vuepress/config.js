@@ -45,10 +45,11 @@ module.exports = {
                 'replay1/firmware-upgrade',
                 'replay1/troubleshooting',
                 {
-                  title: 'Daughterboard',
+                  title: '68K Daughterboard',
                   path: '/guide/replay1/daughterboard/',
                   children: [
-                    'daughterboard/'
+                    'replay1/daughterboard/',
+                    'replay1/daughterboard/setup'
                   ]
                 },
               ]
