@@ -49,7 +49,8 @@ module.exports = {
                   path: '/guide/replay1/daughterboard/',
                   children: [
                     'replay1/daughterboard/',
-                    'replay1/daughterboard/setup'
+                    'replay1/daughterboard/hardware',
+                    'replay1/daughterboard/software'
                   ]
                 },
               ]
