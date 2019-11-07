@@ -13,6 +13,6 @@ slot (dedicated to the FPGA), 100Mbit Ethernet, two USB 2.0 ports, a real time c
 audio in socket (24-bit 96KHz stereo ADC) and Midi I/O interface.
 
 ::: tip Note
-Daughter board capabilities depend cores support. Audio In Record & Sampling will
+Use of daughter board features depends on per-core support. Audio In Record & Sampling will
 be driver and core dependent.
 :::
