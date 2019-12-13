@@ -16,19 +16,203 @@ Before starting, you will need a working set of workbench disks, preferably
 3.1 or 3.1.4. You should also ensure your Replay is running a recent
 [firmware release](/guide/replay1/firmware-upgrade)
 
-<!-- and you’ll need an updated ROM and other files from the one in replay release for the 060.  -->
+This guide will take you through the steps needed to install the 68060 core
+on the FPGA Replay and configure a bootable hard-drive running workbench
+with 68060 and daughter board support libs.
 
-## 060 CPU install
+If you wish to use the daughter boards features without a 68060 chip in the
+CPU socket, you can still follow this guide but use the aga or fx68k core
+rather than the 68060 core. In addition you can skip the 68060 support
+library step.
 
-1) Download the 68060 core files from https://github.com/FPGAArcade/replay_release/tree/master/amiga and add them to your SDcard. This will include the following files, “replay.ini“,”replay.rom” and “replay_amiga_68060.bit“. You must use these for the daughterboard and they cannot be mixed with the amiga_aga core files.
-2) Note on SDcard setup: Assuming you have not already, you need to prior to this, setup an sdcard for the replay. In this archive, it will show you the basic files required to boot the replay and a core. https://fpgaarcade-docs.netlify.com/guide/replay1/sd-setup.html#loader-core . Also, see this link on how to create a replay Amiga sdcard and partitions from scratch https://www.fpgaarcade.com/punbb/viewtopic.php?id=1249. After this is done, apart from again setting up the card as shown in the docs link above, you then need to install the 060 libraries on your sdcard so as it will boot automatically with the replay.
-3) You will find the Motorola 040/060 library files here, http://phase5.a1k.org/files/040_060Libs.lha or http://phase5.a1k.org/files/040_060Libs.zip
-4) You should then be able to access the 060 from wb and or other software including the FPU etc. Also lastly make sure that you have the latest Replay1 Firmware https://github.com/FPGAArcade/replay_release/tree/master/firmware/replay1
+## 68060 Core Files
 
-Also note: At this time, the local/fast ram on the Daughter board is Daughter board specific and as such, **at this time is not accessible by the Replay1 Baseboard without using the 060 core which will enable all the Daughter board Hardware also, including Ethernet,Usb, Ram etc. Note: These Upper Hardware features on the Daughterboard….The Sdcard , Audio in , RTclock and Floppydrive connector are still accessible with the 020 (aga) core regardless.
-** Features and Design can or may change.
+It is assumed you are already familiar with how to arrange core files on your
+SD card to work with the Replay. If that is not the case, please review the
+[SD Card setup guide](/guide/replay1/sd-setup.html#loader-core) before continuing.
 
-Additional installation for the Daughterboard Hw below for Amiga WorkBench.
+The "Amiga 68060" core provides support for both the daughter board and a physical
+68060 CPU in the daughter board's CPU socket.
+
+Download the [amiga_68060 core files](https://github.com/FPGAArcade/replay_release/tree/master/amiga/amiga_68060/)
+and transfer to a suitable location on your SD card along with the kick_31.rom
+
+::: vue
+/cores/amiga_68060/
+├── kick_31.rom
+├── replay.ini
+├── replay.rom
+├── replay_amiga_68060.bit
+:::
+
+<!-- TODO: Add note on what the replay.rom file is -->
+
+::: tip Note
+The use of a github.com repository for downloading core files is a temporary one.
+Most cores have been ported to the new build system and zip files are available
+to download at https://build.fpgaarcade.com The Amiga cores have yet to be ported.
+:::
+
+To use a different kickstart rom, transfer the file to the core directory
+and then edit the replay.ini file. Locate the ROM line and change the "kick_31.rom"
+part of the line to your new kickstart rom file name
+
+```
+ROM = kick_31.rom,0x80000,0x00F80000
+```
+
+<!-- TODO: Check if this creates a valid zero'd file rather than sparse.
+
+Windows users alternatively can use
+
+```
+fsutil file createnew amiga_disk.hdf 536870912
+```
+ -->
+
+<!-- [AMedia's guide](http://amiga.amedia-computer.com/document/Minimig/HDF_Creation_Minimig_English.pdf) -->
+
+You will also need a hard-disk file (hdf). This can be created using the dd
+terminal command on Linux, Mac OS and Windows 10 running the Windows Subsystem
+for Linux.
+
+```
+dd if=/dev/zero of=amiga_disk.hdf count=512 bs=1M
+```
+
+Transfer the hdf, workbench installation disks and replay_drivers.adf
+to your SD card. Where you choose to locate your hdf/adf files is entirely up to you
+although see below for one possible setup.
+
+::: warning Draft
+replay_drivers.adf does not currently exist. Depending on redistribution permissions,
+users may need to make their own adf with the required library files for the 68060.
+:::
+
+::: vue
+/
+└── cores/amiga_68060/
+|   ├── kick_31.rom
+|   ├── replay.ini
+|   ├── replay.rom
+|   └── replay_amiga_68060.bit
+|
+└── /data/amiga/
+&nbsp;   ├── /floppies/
+&nbsp;   |   ├── replay_drivers.adf
+&nbsp;   |   ├── workbench_disk1.adf
+&nbsp;   |   ...
+&nbsp;   |   └── workbench_disk6.adf
+&nbsp;   ├── /hdd/
+&nbsp;       └── amiga_disk.hdf
+:::
+
+There's one final and optional configuration step to make. Edit the replay.ini
+and locate the files section.
+
+```
+[FILES]
+# HDs / Carts / Floppys etc
+# _cfg has either fixed/removable then list (upto four) file types supported
+cha_cfg = "removable", "adf", "scp"
+chb_cfg = "fixed", "hdf"
+#cha_mount = "utils.adf",0
+#chb_mount = "small060.hdf",0
+```
+
+We will specify the hdf file we want auto mounted as the
+master hdd, your changed FILES section should look like:
+
+```
+[FILES]
+# HDs / Carts / Floppys etc
+# _cfg has either fixed/removable then list (upto four) file types supported
+cha_cfg = "removable", "adf", "scp"
+chb_cfg = "fixed", "hdf"
+chb_mount = "../../data/amiga/amiga_disk.hdf",0
+```
+
+This will ensure your (currently blank) hard-disk is automatically mounted as
+the master hard disk.
+
+## Workbench Install
+
+The workbench installer will not work without modifications on the 68060. It requires
+a set of 68040/68060 library files. Although you could make a custom installer adf
+with these files, it's easier to do the initial setup using a supported CPU.
+
+As luck would have it, the Replay also comes with the ["aga"](https://github.com/FPGAArcade/replay_release/tree/master/amiga/amiga_aga)
+core. Setup this core on your Replay along with the kick_31.rom and make
+the same "[FILES]" change as you did for the 68060 replay.ini and boot the aga core.
+
+Once you are at the kickstart insert floppy screen insert the workbench install
+disk into FDD1.
+
+<!-- TODO: images... --->
+
+::: tip Note
+If you did not make the [FILES] change earlier, you will need to mount your
+hard disk "hdf" file as the master hdd and restart your core.
+:::
+
+Once workbench has booted, double click the "Install3.1" icon, then "HDSetup",
+"English" and "Partition Hard Drive". The hard drive unit to partition should
+be changed to "0", click proceed and then partition.
+
+After a short time the HDD will be partitioned and a "Work" and "Workbench" icon
+will appear on the desktop. Close the "HDSetup" program.
+
+We'll now install Workbench to the freshly partitioned hard-disk. Open "Install" and
+"English". Proceed with the "Install Release 3.1". For installation mode, select,
+"Intermediate User - Limited Manual Control" then proceed with the install. "Install
+for real" should be checked, no logging required.
+
+The next screen should ask if you want "Release 3.1 installed in the 'Workbench'
+partition?". If that's not the case, cancel the install and go over these steps again,
+you do not want to install to the "Install3.1" disk by mistake.
+
+Click through the rest of the screens making any selections you feel appropriate
+and finally you'll be prompted to insert the "Amiga Workbench" disk. Switch the
+disk in FDD1 for "Amiga Workbench". The installation should automatically proceed.
+Follow the remaining on screen prompts, switching disk when prompted.
+
+
+## Replay Drivers
+
+If you try booting your freshly installed workbench from hard-disk with the 68060
+core you will be hit by a "software failure".
+
+The replay_drivers.adf includes support libraries for the daughter board hardware
+as well as a copy of the "MuLib aware 680x0" libraries by Thomas Richter.
+
+<!--
+TODO: Alternative instructions on how user can create an adf to put their
+own copy of the phase5 library files on.
+"System libraries for 68040/68060 Systems." zip from
+[phase5](http://phase5.a1k.org/). -->
+
+Mount the replay_drivers.adf in FDD1. Open the "ReplayDrivers" icon and hold the
+right mouse button in the "ReplayDrivers" window, then from the main menu select
+"Window"/"Show"/"All Files".
+
+You should now see the "mmu.library" and "68060.library".
+
+Open the "Workbench" folder and again show all files. Enter the "Libs" directory
+and drag each of the library files from the replay drivers disk to the "Libs" folder.
+
+You can now exit workbench and load the 68060 core with your freshly configured
+hard-disk.
+
+::: warning Draft
+Instructions are incomplete. Support files are required to use the daughter board
+hardware. Further details coming soon(tm)
+:::
+
+
+<!-- Also note: At this time, the local/fast ram on the Daughter board is Daughter board specific and as such, **at this time is not accessible by the Replay1 Baseboard without using the 060 core which will enable all the Daughter board Hardware also, including Ethernet,Usb, Ram etc. Note: These Upper Hardware features on the Daughterboard….The Sdcard , Audio in , RTclock and Floppydrive connector are still accessible with the 020 (aga) core regardless.
+** Features and Design can or may change. -->
+
+<!--
 
 ## Ethernet install
 
@@ -65,6 +249,6 @@ do wish the clock to retain the date/time.
 The Daughterboard is not a requirement for the RTG installation.
 However, certain games like doom or quake or possibly other upcoming Amiga or other platform / Core games etc could make use of the RTG screen modes along with the 060 accelerator.
 
-Follow the installation instructions here to install the RTG. Installation instructions.
+Follow the installation instructions here to install the RTG. Installation instructions. -->
 
 <!-- TODO: Link to RTG setup page in KB until manual for Amiga core available -->
