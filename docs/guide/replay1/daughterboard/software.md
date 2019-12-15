@@ -80,14 +80,22 @@ for Linux.
 dd if=/dev/zero of=amiga_disk.hdf count=512 bs=1M
 ```
 
-Transfer the hdf, workbench installation disks and replay_drivers.adf
-to your SD card. Where you choose to locate your hdf/adf files is entirely up to you
-although see below for one possible setup.
-
 ::: warning Draft
-replay_drivers.adf does not currently exist. Depending on redistribution permissions,
-users may need to make their own adf with the required library files for the 68060.
+Following links do not yet exist and are for doc illustration only.
 :::
+
+Alternatively we have prepared a
+[blank 512MB hdf](https://github.com/FPGAArcade/replay_release/tree/master/amiga/support/amiga_disk_512MB.hdf.zip) you
+can unzip and use.
+
+Later in the guide you will also need a
+[replay driver disk](https://github.com/FPGAArcade/replay_release/tree/master/amiga/support/replay_drivers.adf.zip)
+and the [Mu680x0Libs disk](https://github.com/FPGAArcade/replay_release/tree/master/amiga/support/Mu680x0Libs.adf.zip)
+containing various libraries/drivers for the daughter board and 68060.
+
+Transfer the hdf, workbench installation disks and replay_drivers.adf
+to your SD card. Where you choose to locate your hdf/adf files is entirely up to you.
+See below for one possible setup.
 
 ::: vue
 /
@@ -120,8 +128,10 @@ chb_cfg = "fixed", "hdf"
 #chb_mount = "small060.hdf",0
 ```
 
-We will specify the hdf file we want auto mounted as the
-master hdd, your changed FILES section should look like:
+This defines two channels, "a" which is used for mounting floppy disks and "b"
+where fixed hard-disks are defined. Floppies will be mounted at run time via
+the OSD, whilst the hard-disk can be automounted. To do this specify the hdf
+file as the master (0) hdd, your changed FILES section should look like:
 
 ```
 [FILES]
@@ -135,15 +145,53 @@ chb_mount = "../../data/amiga/amiga_disk.hdf",0
 This will ensure your (currently blank) hard-disk is automatically mounted as
 the master hard disk.
 
-## Workbench Install
+## "Software Failure"
 
-The workbench installer will not work without modifications on the 68060. It requires
-a set of 68040/68060 library files. Although you could make a custom installer adf
-with these files, it's easier to do the initial setup using a supported CPU.
+If you load the 68060 core and insert the Workbench Install disk in FDD1
+you'll be met with an unwelcomed sight. "Software Failure".
 
-As luck would have it, the Replay also comes with the ["aga"](https://github.com/FPGAArcade/replay_release/tree/master/amiga/amiga_aga)
-core. Setup this core on your Replay along with the kick_31.rom and make
-the same "[FILES]" change as you did for the 68060 replay.ini and boot the aga core.
+<!-- TODO: Image -->
+
+The installer disk does not support the 68060 and requires
+a support library adding such as the phase5 68040/68060 libraries. Whilst making
+yourself a bigger install disk with the requisite libraries is one option, there
+are two alternatives.
+
+### Bypass Startup-Sequence
+
+Reset the core via the OSD "F12" and "Reset Target". The LEDs on your keyboard should
+flash on and off. As soon as they turn off, press and hold both left and right mouse buttons together.
+
+You should now be at the early start-up screen with "Boot Options", "Display Options"
+and "Expansion Board Diagnostics". Select "Boot With No Startup-Sequence" from the
+bottom right.
+
+::: tip Tip
+If you press both mouse buttons too early or too late you will not reach the
+startup screen and instead the Amiga will try to load the installer disk and
+cause a "Software Failure".
+:::
+
+At the AmigaDOS prompt enter the following commands to load workbench
+
+```
+assign env: ram:
+loadwb
+```
+
+Proceed to [Installation](#Installation).
+
+### AGA/FX Core
+
+<!-- TODO: Image -->
+
+Another option is to install workbench via a supported CPU. As luck would have it, the
+Replay also comes with the ["aga"](https://github.com/FPGAArcade/replay_release/tree/master/amiga/amiga_aga)
+core. You can setup this core on your Replay along with the kick_31.rom and make
+the same "[FILES]" change as you did for the 68060 replay.ini, boot the aga core
+and perform the installation steps described below before rebooting into the 68060
+core.
+
 
 Once you are at the kickstart insert floppy screen insert the workbench install
 disk into FDD1.
@@ -154,6 +202,8 @@ disk into FDD1.
 If you did not make the [FILES] change earlier, you will need to mount your
 hard disk "hdf" file as the master hdd and restart your core.
 :::
+
+### Installation
 
 Once workbench has booted, double click the "Install3.1" icon, then "HDSetup",
 "English" and "Partition Hard Drive". The hard drive unit to partition should
@@ -177,31 +227,42 @@ disk in FDD1 for "Amiga Workbench". The installation should automatically procee
 Follow the remaining on screen prompts, switching disk when prompted.
 
 
-## Replay Drivers
+## 68060 Drivers
 
 If you try booting your freshly installed workbench from hard-disk with the 68060
-core you will be hit by a "software failure".
+core you will once more encounter the "Software Failure". Just as the install
+disk needs support for the 68060, so does your Workbench Install.
 
-The replay_drivers.adf includes support libraries for the daughter board hardware
-as well as a copy of the "MuLib aware 680x0" libraries by Thomas Richter.
+This is where the Mu680x0Libs.adf you downloaded earlier and transfered
+to the SD Card comes in. This disk contains a copy of the "MuLib aware 680x0" libraries by Thomas Richter.
 
-<!--
-TODO: Alternative instructions on how user can create an adf to put their
-own copy of the phase5 library files on.
-"System libraries for 68040/68060 Systems." zip from
-[phase5](http://phase5.a1k.org/). -->
+Insert the Mu680x0Libs.adf in FDD2. Open the "Mu680x0Libs" icon and hold the
+right mouse button, then from the main menu select "Window"/"Show"/"All Files".
 
-Mount the replay_drivers.adf in FDD1. Open the "ReplayDrivers" icon and hold the
-right mouse button in the "ReplayDrivers" window, then from the main menu select
-"Window"/"Show"/"All Files".
+You should now see
 
-You should now see the "mmu.library" and "68060.library".
+::: vue
+/
+├── 68060.library
+├── mmu.library
+├── Mu680x0Libs.lha
+├── Mu680x0Libs.readme
+├── readme.1st
+:::
 
 Open the "Workbench" folder and again show all files. Enter the "Libs" directory
-and drag each of the library files from the replay drivers disk to the "Libs" folder.
+and drag the "68060.library" and "mmu.library" over Mu680x0Libs disk to the
+workbench "Libs" folder.
 
-You can now exit workbench and load the 68060 core with your freshly configured
-hard-disk.
+You should now be able to exit workbench and load the 68060 core with your freshly configured
+hard-disk without a "Software Failure".
+
+::: tip Tip
+There are alternative 68060 libraries available such as those by [phase5](http://phase5.a1k.org/.
+You will need to create your own adf file to make use of these.
+:::
+
+# Replay Drivers
 
 ::: warning Draft
 Instructions are incomplete. Support files are required to use the daughter board
