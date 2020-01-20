@@ -26,13 +26,14 @@ module.exports = {
     ],
 
     sidebar: {
+      // Getting Started Guides
       '/guide/': [
         {
           title: 'Getting Started',
           path: '/guide/',
           collapsable: false,
 
-          // Getting Started Guides
+          // Replay1 and Vidor guides
           children: [
             {
               title: 'Replay 1',
@@ -43,6 +44,15 @@ module.exports = {
                 'replay1/sd-setup',
                 'replay1/firmware-upgrade',
                 'replay1/troubleshooting',
+                {
+                  title: '68K Daughterboard',
+                  path: '/guide/replay1/daughterboard/',
+                  children: [
+                    'replay1/daughterboard/',
+                    'replay1/daughterboard/hardware',
+                    'replay1/daughterboard/software'
+                  ]
+                },
               ]
             },
             '/guide/vidor/'
