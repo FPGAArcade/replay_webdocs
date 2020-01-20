@@ -81,17 +81,18 @@ dd if=/dev/zero of=amiga_disk.hdf count=512 bs=1M
 ```
 
 ::: warning Draft
-Following links do not yet exist and are for doc illustration only.
+Replay driver disk is not yet available for download.
 :::
 
 Alternatively we have prepared a
 [blank 512MB hdf](https://github.com/FPGAArcade/replay_release/tree/master/amiga/support/amiga_disk_512MB.hdf.zip) you
 can unzip and use.
 
-Later in the guide you will also need a
+Later in the guide you will also need the
 [replay driver disk](https://github.com/FPGAArcade/replay_release/tree/master/amiga/support/replay_drivers.adf.zip)
-and the [Mu680x0Libs disk](https://github.com/FPGAArcade/replay_release/tree/master/amiga/support/Mu680x0Libs.adf.zip)
-containing various libraries/drivers for the daughter board and 68060.
+and the
+[Mu680x0Libs disk](https://github.com/FPGAArcade/replay_release/blob/master/amiga/support/Mu680x0Libs.adf)
+containing replay support drivers and libraries for the 68060.
 
 Transfer the hdf, workbench installation disks and replay_drivers.adf
 to your SD card. Where you choose to locate your hdf/adf files is entirely up to you.
