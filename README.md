@@ -13,8 +13,8 @@ yarn run docs:dev
 
 ## Alerts
 
-You can use alerts (containers0 to draw the users attention to useful hints
-or potential for damage. Keep in mind it's the title is that determines the
+You can use alerts (containers) to draw the users attention to useful hints
+or potential for damage. Keep in mind it is the title that determines the
 note level, "tip", "warning" and "danger" are for the container type only.
 
 ```
