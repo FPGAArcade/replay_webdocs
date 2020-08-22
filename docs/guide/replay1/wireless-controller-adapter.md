@@ -6,7 +6,7 @@ Proceed at your own risk.
 :::
 
 Although not supported, it is possible to make use of wireless controllers such
-as the XBox One, PS3, PS3, WiiMote and 8bitdo range of bluetooth controllers via
+as the XBox One, PS3, PS4, WiiMote and 8bitdo range of bluetooth controllers via
 the [8bitdo Retro Reciever](https://www.8bitdo.com/retro-receiver-genesis-mega-drive/)
 and an DIY Replay adapter.
 
