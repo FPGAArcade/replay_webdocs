@@ -83,10 +83,10 @@ few, currently drive the select pin low. This has the unfortunate effect of trig
 the alternate read out mode of the Mega Drive controller during which Left/Right
 directions cannot be read.
 
-To avoid this, the simplest option currently is to bypass pin 5 coming from the replay
-and connect pin 7 (select) on the controller side of the adapter to +5V. This will
-ensure the Retro Receiver always outputs Left/Right/Up/Down and buttons B and C
-for all cores.
+To avoid this, the simplest option currently is to pull-up pin 7 on the controller
+side by tieing it to +5V with a 1k resistor and leaving pin 5 on the replay side
+disconnected. This will ensure the Retro Receiver always outputs Left/Right/Up/Down and
+buttons B and C for all cores.
 
 ::: tip Note
 A future framework/core update might enable 2 button support without the need to
