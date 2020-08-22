@@ -4,14 +4,20 @@
      TODO: PSU and mains adapter specs -->
 In order to use your Replay board you will need a few additional items:
 
- - [Power Supply](#power-supply) _(required)_
- - [Video cable/adapters](#video-cable) _(required)_
- - SD Card _(required)_
- - PS2 Compatible Keyboard _(required)_
+Required:-
+ - [Power Supply](#power-supply)
+ - [Video cable/adapters](#video-cable)
+ - SD Card
+ - PS2 Compatible Keyboard
+
+Recommended:-
  - PS2 Mouse
- - DB9 Joysticks
+ - [Controllers](#controllers)
  - 3.5mm Audio cable/speakers
  - Mini-itx case
+
+Expansions:-
+ - [68060 Daughterboard](daughterboard/)
 
 The mainboard is half size mini-ITX form factor. The base is 170 by 80 mm
 and the height is under 35 mm. It optionally comes with a standard ATX
@@ -114,4 +120,15 @@ Note, Pin 1 of the USB header is closest to the P14 label.
 ::: warning Take Care
 Take _extreme_ care when using the microusb socket. It is very easy to break
 away from the board. We strongly recommend using the 5 USB header pins (P14) instead.
+:::
+
+## Controllers
+
+The replay features two 9 pin (DE-9) joystick ports on the rear of board. These ports
+accept peripherals compatible with the widely used [Atari joystick port](https://en.wikipedia.org/wiki/Atari_joystick_port)
+found on the Atari 2600, Atari ST, Commodore 64, Amiga and Vic20.
+
+::: tip Tip
+Bluetooth controllers are not supported however it is possible to use the XBox
+One, PS3, PS4, wiimote and 8bitdo controllers with a [DIY adatper](wireless-controller-adapter)
 :::
