@@ -1,3 +1,18 @@
+require('env-smart').load()
+
+function getEnv(key, envDefault) {
+  if (process.env[key])
+      return process.env[key]
+
+  if (envDefault !== undefined)
+      return envDefault
+
+  console.error(`Required env '${key}' not set`)
+
+  // Abort, this is critical for CI builds
+  process.exit(1)
+}
+
 module.exports = {
   title: 'FPGA Arcade',
   description: 'Documentation for FPGA Arcade projects.',
@@ -13,6 +28,9 @@ module.exports = {
     lastUpdated: true,
     displayAllHeaders: true,
 
+    replayAPI: getEnv('VUE_APP_REPLAY_API'),
+
+    // Menus
     nav: [
       {text: 'Get Started', items: [
         {text: 'Replay 1', link: '/guide/replay1/'},
@@ -83,5 +101,7 @@ module.exports = {
     //   after: '</UpgradePath>',
     // }]
 
-  ]
+  ],
+
+
 }

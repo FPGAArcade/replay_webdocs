@@ -2,13 +2,6 @@
 
 [VuePress](https://vuepress.vuejs.org/) based documentation for FPGA Arcade projects.
 
-For local development:
-
-```
-yarn install
-yarn run docs:dev
-```
-
 # Formatting Notes
 
 ## Alerts
@@ -52,3 +45,14 @@ Use to warn about the possibility of serious or fatal injuries.
 ```
 
 Refer to the VuePress site for further information on containers.
+
+# Development
+
+For local development:
+
+```
+yarn install
+yarn docs:dev
+```
+
+Optionally create a ".env" file to customise the build.
