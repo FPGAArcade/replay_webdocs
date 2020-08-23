@@ -8,7 +8,7 @@ Proceed at your own risk.
 Although not supported, it is possible to make use of wireless controllers such
 as the XBox One, PS3, PS4, WiiMote and 8bitdo range of bluetooth controllers via
 the [8bitdo Retro Reciever](https://www.8bitdo.com/retro-receiver-genesis-mega-drive/)
-and an DIY Replay adapter.
+and a DIY Replay adapter.
 
 [![Wireless Adapter](/images/replay1/wireless_adapter_thumb.jpg)](/images/replay1/wireless_adapter.jpg)
 
@@ -16,9 +16,13 @@ The Retro Reciever does the heavy lifting of allowing wireless controllers to be
 used with a Sega Mega Drive. The DIY adapter accounts for a few differences between
 the Mega Drive and Replay joystick ports.
 
-When referring to the custom adapter, the terms "Replay side" and "Controller side"
-refer to the female and male DE-9 sockets that plug into the Replay and Mega Drive
-controller (Retro Receiver) respectively.
+To make the adapter you will need two DE-9 sockets (one male, one female),
+along with a short piece of 9 core wire and a 1k resistor.
+
+::: tip Note
+This adapter is also suitable for connectin a wired Mega Drive controller to the
+replay.
+:::
 
 ## Pin-Out
 
@@ -43,8 +47,14 @@ Drive it's a selection output to toggle different states in the controller.
 The adapter should be cross-wired to swap pins 5 and 7 between the Replay
 side and controller side.
 
-Swapping pins alone is not sufficient as the the Mega Drive uses +5V power
-whilst the Replay 1 supplies +3.3V and the Retro Receiver will not work with +3.3V.
+::: tip Note
+The terms "replay side" and "controller side" refer to the female and male DE-9
+sockets of the DIY adapter that plug into the Replay and Mega Drive controller
+(Retro Receiver) respectively.
+:::
+
+The second difference is the Mega Drive uses +5V power whilst the Replay 1
+supplies +3.3V and the Retro Receiver will not work with +3.3V.
 
 ## +5V Power
 
@@ -63,7 +73,7 @@ of the joystick ports.
 
 [![L16/L17](/images/replay1/l16_17_thumb.jpg)](/images/replay1/l16_17.jpg)
 
-Another, safer, option is to tap +5V with a jumper wire from elsewhere on the board.
+Another (easier) option is to tap +5V with a jumper wire from elsewhere on the board.
 For example the +5V header pin, or for those using the daughterboard, the +5V pin
 from either of the midi headers. The only soldering needed with this option is
 on the DE-9 adapter and if that goes wrong, it's cheap enough to replace.
@@ -93,3 +103,7 @@ A future framework/core update might enable 2 button support without the need to
 tie select high. However, until such a time, tieing select high is the simplest
 way to use wireless controllers with cores that do not need more than 2 buttons
 :::
+
+With the above adapter connected between the Replay and the Retro Receiver you
+should now be able to follow the sync instructions that came with the Retro
+Receiver and enjoy your wireless gaming.
