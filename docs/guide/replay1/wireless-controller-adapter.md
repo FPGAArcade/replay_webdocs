@@ -75,7 +75,7 @@ the jumper wire direct to pin 5 on the controller side of the adapter.
 ### 2 Buttons
 
 At time of writing the current framework/firmware and above adapter will only work in 2
-button mode and only with cores that happen to drive the select pin high, for example
+button mode and only with cores that happen to drive the select pin high, for example,
 Pac-Man.
 
 Other cores, such as the Acorn Electron, Donkey Kong and Galaga to name but a
