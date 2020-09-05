@@ -130,5 +130,5 @@ found on the Atari 2600, Atari ST, Commodore 64, Amiga and Vic20.
 
 ::: tip Tip
 Bluetooth controllers are not supported however it is possible to use the XBox
-One, PS3, PS4, wiimote and 8bitdo controllers with a [DIY adatper](wireless-controller-adapter)
+One, PS3, PS4, wiimote and 8bitdo controllers with a [DIY adatper](/diy/wireless-controller-adapter)
 :::

@@ -1,3 +1,6 @@
+---
+sidebar: auto
+---
 # Wireless Controllers
 
 ::: warning Draft
