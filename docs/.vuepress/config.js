@@ -52,7 +52,6 @@ module.exports = {
           title: 'Get Started (R1)',
           collapsable: true,
 
-          // Replay1 and Vidor guides
           children: [
             '/guide/replay1/',
             '/guide/replay1/hardware',
@@ -78,8 +77,8 @@ module.exports = {
           title: 'Get Started (V4)',
           collapsable: false,
 
-          // Replay1 and Vidor guides
           children: [
+            '/guide/vidor/'
           ]
         }
       ],
