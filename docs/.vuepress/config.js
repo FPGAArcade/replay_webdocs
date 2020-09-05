@@ -26,7 +26,7 @@ module.exports = {
 
     // Misc
     lastUpdated: true,
-    displayAllHeaders: true,
+    displayAllHeaders: false,
 
     replayAPI: getEnv('VUE_APP_REPLAY_API'),
 
@@ -36,48 +36,60 @@ module.exports = {
         {text: 'Replay 1', link: '/guide/replay1/'},
         {text: 'MKR Vidor 4000', link: '/guide/vidor/'}
       ]},
-      // {text: 'User Manual', items: [
-      //   {text: 'Replay 1', link: '/manual/replay1/'},
-      //   {text: 'MKR Vidor 4000', link: '/manual/vidor/'}
-      // ]},
+      {text: 'User Manual', items: [
+         {text: 'Replay 1', link: '/manual/replay1/'},
+         {text: 'MKR Vidor 4000', link: '/manual/vidor/'}
+      ]},
       {text: 'Community', link: '/community'},
       {text: 'Contribute', link: '/contributing'}
     ],
 
+    sidebarDepth: 2,
     sidebar: {
       // Getting Started Guides
-      '/guide/': [
+      '/guide/replay1/': [
         {
-          title: 'Get Started',
-          path: '/guide/',
+          title: 'Get Started (R1)',
+          collapsable: true,
+
+          // Replay1 and Vidor guides
+          children: [
+            '/guide/replay1/',
+            '/guide/replay1/hardware',
+            '/guide/replay1/sd-setup',
+            '/guide/replay1/firmware-upgrade',
+            '/guide/replay1/troubleshooting',
+          ]
+        },
+        {
+          title: '68K Daughterboard',
+          collapsable: true,
+
+          children: [
+            '/guide/replay1/daughterboard/',
+            '/guide/replay1/daughterboard/hardware',
+            '/guide/replay1/daughterboard/software'
+          ]
+        }
+      ],
+
+      '/guide/vidor/': [
+        {
+          title: 'Get Started (V4)',
           collapsable: false,
 
           // Replay1 and Vidor guides
           children: [
-            {
-              title: 'Replay 1',
-              path: '/guide/replay1/',
-              children: [
-                'replay1/',
-                'replay1/hardware',
-                'replay1/sd-setup',
-                'replay1/firmware-upgrade',
-                'replay1/troubleshooting',
-                {
-                  title: '68K Daughterboard',
-                  path: '/guide/replay1/daughterboard/',
-                  children: [
-                    'replay1/daughterboard/',
-                    'replay1/daughterboard/hardware',
-                    'replay1/daughterboard/software'
-                  ]
-                },
-              ]
-            },
-            '/guide/vidor/'
-          ],
+          ]
         }
       ],
+
+      // User Manual
+      // '/manual/replay1/': [
+      //   {
+      //     title: 'User Manual',
+      //   }
+      // ],
 
       // Fallback
       '/': [
