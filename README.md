@@ -52,7 +52,7 @@ For local development:
 
 ```
 yarn install
-yarn docs:dev
+yarn dev
 ```
 
 Optionally create a ".env" file to customise the build.
