@@ -1,9 +1,5 @@
 # Hardware
 
-::: warning Draft
-This documentation is a work in progress.
-:::
-
 Your daughter board should have shipped with 4 spacers which should be screwed
 into four mounting holes on the Replay 1 base board. The daughter board's mounting
 holes should then line up with these spacers.
