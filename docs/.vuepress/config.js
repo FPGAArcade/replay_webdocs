@@ -33,13 +33,13 @@ module.exports = {
     // Menus
     nav: [
       {text: 'Get Started', items: [
-        {text: 'Replay 1', link: '/guide/replay1/'},
-        {text: 'MKR Vidor 4000', link: '/guide/vidor/'}
+        {text: 'Replay 1 (R1)', link: '/guide/replay1/'},
+        {text: 'MKR Vidor 4000 (V4)', link: '/guide/vidor/'}
       ]},
-      {text: 'User Manual', items: [
-         {text: 'Replay 1', link: '/manual/replay1/'},
-         {text: 'MKR Vidor 4000', link: '/manual/vidor/'}
-      ]},
+      // {text: 'User Manual', items: [
+      //    {text: 'Replay 1', link: '/manual/replay1/'},
+      //    {text: 'MKR Vidor 4000', link: '/manual/vidor/'}
+      // ]},
       {text: 'Community', link: '/community'},
       {text: 'Contribute', link: '/contributing'}
     ],
