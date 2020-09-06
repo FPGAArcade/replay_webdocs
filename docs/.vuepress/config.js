@@ -19,12 +19,13 @@ module.exports = {
 
   themeConfig: {
     // GitHub Integration
-    repo: 'fpgaarcade',
+    repo: 'FPGAArcade',
     docsRepo: 'FPGAArcade/replay_docs',
     docsDir: 'docs',
     editLinks: true,
 
     // Misc
+    logo: '/images/logo.png',
     lastUpdated: true,
     displayAllHeaders: false,
 
@@ -49,8 +50,15 @@ module.exports = {
       //    {text: 'Replay 1', link: '/manual/replay1/'},
       //    {text: 'MKR Vidor 4000', link: '/manual/vidor/'}
       // ]},
-      {text: 'Community', link: '/community'},
-      {text: 'Contribute', link: '/contributing'}
+      {
+        text: 'Links',
+        items: [
+          {text: 'Community', link: '/community'},
+          {text: 'Contribute', link: '/contributing'},
+          {text: 'News', link: 'https://www.fpgaarcade.com/news'},
+          {text: 'Releases', link: 'https://build.fpgaarcade.com/releases/'}
+        ]
+      }
     ],
 
     sidebarDepth: 2,
@@ -93,11 +101,11 @@ module.exports = {
       ],
 
       // User Manual
-      // '/manual/replay1/': [
-      //   {
-      //     title: 'User Manual',
-      //   }
-      // ],
+      '/manual/replay1/': [
+        {
+          title: 'User Manual',
+        }
+      ],
 
       // Fallback
       '/': [
