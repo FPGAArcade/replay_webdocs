@@ -4,7 +4,7 @@ sidebar: auto
 # Wireless Controllers
 
 ::: warning Draft
-This documentation is a work in progress and has not being reviewed for accuracy.
+This documentation is a work in progress and has not been reviewed for accuracy.
 Proceed at your own risk.
 :::
 
