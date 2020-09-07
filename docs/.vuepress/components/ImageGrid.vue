@@ -7,17 +7,6 @@
   </div>
 </template>
 
-<script>
-export default {
-  props: {
-    gridArray: {
-      required: true,
-      type: Array
-    }
-  }
-}
-</script>
-
 <style scoped>
 .image-grid {
   display: grid;
@@ -34,3 +23,14 @@ export default {
   align-items: center;
 }
 </style>
+
+<script>
+export default {
+  props: {
+    gridArray: {
+      required: true,
+      type: Array
+    }
+  }
+}
+</script>

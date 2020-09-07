@@ -3,10 +3,10 @@ Zoomable image wrapper
 -->
 <template>
 
-    <img class="zoom-custom-img"
-         :src="$withBase(src)"
-         :data-zoom-src="$withBase(originalSrc)"
-         :alt="alt" />
+  <img class="zoom-custom-img"
+       :src="$withBase(src)"
+       :data-zoom-src="$withBase(originalSrc)"
+       :alt="alt" />
 
 </template>
 
@@ -44,7 +44,7 @@ export default {
       const filename = path.basename(this.src, ext)
       if (filename.endsWith(this.thumbSuffix))
         return path.join(path.dirname(this.src),
-                         path.basename(this.src, ext).slice(0,-this.thumbSuffix.length) + ext)
+               path.basename(this.src, ext).slice(0,-this.thumbSuffix.length) + ext)
 
       return this.src
     }
