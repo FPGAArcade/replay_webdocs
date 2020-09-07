@@ -14,7 +14,7 @@ If you insert the now blank SD card into the Replay and power on, the Replay
 will, unsurprisingly, fail to find a valid core and will fall back to the "embedded loader",
 a small utility core baked into the Replay's Firmware.
 
-![Embedded loader background](/images/embedded_loader.jpg "Embedded loader background")
+<ZoomableImage src='/images/embedded_loader.jpg' alt='Embedded loader background'/>
 
 The OSD will also display the text "NO VALID SETUP ON SDCARD!" along with a note
 it cannot find the "replay.bin" file and to check the "ini" file.

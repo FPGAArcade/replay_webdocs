@@ -13,7 +13,7 @@ as the XBox One, PS3, PS4, WiiMote and 8bitdo range of bluetooth controllers via
 the [8bitdo Retro Reciever](https://www.8bitdo.com/retro-receiver-genesis-mega-drive/)
 and a DIY Replay adapter.
 
-[![Wireless Adapter](/images/replay1/wireless_adapter_thumb.jpg)](/images/replay1/wireless_adapter.jpg)
+<ZoomableImage src='/images/replay1/wireless_adapter_thumb.jpg' />
 
 The Retro Reciever does the heavy lifting of allowing wireless controllers to be
 used with a Sega Mega Drive. The DIY adapter accounts for a few differences between
@@ -65,7 +65,7 @@ There are a couple of ways to get +5V from the Replay. The first is that
 the Replay 1 _can_ supply +5V to the joystick ports, it is just not setup to do
 so by default.
 
-[![L16/L17](/images/replay1/joystick_pinout_schematic_thumb.jpg)](/images/replay1/joystick_pinout_schematic.jpg)
+<ZoomableImage src='/images/replay1/joystick_pinout_schematic_thumb.jpg' alt='L16/L17'/>
 
 If you are adept with a soldering iron or know someone who is, then
 moving the inductor from L17 to the unpopulated L16 will provide +5V on the
@@ -74,7 +74,7 @@ joystick port power pin.
 The 0603 sized inductor is located at the left rear of the PCB just to the left
 of the joystick ports.
 
-[![L16/L17](/images/replay1/l16_17_thumb.jpg)](/images/replay1/l16_17.jpg)
+<ZoomableImage src='/images/replay1/l16_17_thumb.jpg' alt='L16/L17'/>
 
 Another (easier) option is to tap +5V with a jumper wire from elsewhere on the board.
 For example the +5V header pin, or for those using the daughterboard, the +5V pin

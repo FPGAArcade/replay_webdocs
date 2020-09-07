@@ -86,7 +86,7 @@ required and may be deleted from the SD Card.
 
 As an alternative to the rAppUpdater, you can flash new firmware over USB.
 
-[![USB Header](/images/overview_replay1_usb_thumb.jpg)](/images/overview_replay1_usb.jpg)
+<ZoomableImage src='/images/overview_replay1_usb_thumb.jpg' alt='USB Header'/>
 
 You will need to connect to either the micro usb socket, or, using a standard
 PC motherboard USB cable, to P14, the 5 header pins just to the right of SD Card

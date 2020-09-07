@@ -37,7 +37,7 @@ Molex plug from an ATX power supply. Both sockets are located just to the right
 of the Power On/Off switch. With a maximum current draw of 700mA (3.5W), the board
 runs quite cool with no additional heat sink or fans required.
 
-![Replay Power Connections](/images/overview_replay1_power.jpg)
+<ZoomableImage src='/images/overview_replay1_power.jpg' alt='Replay Power Connections'/>
 
 The 5V DC socket accepts a 2.1mm (5.5mm outer) center pin positive male plug
 supplying at least 1A.
@@ -88,12 +88,12 @@ wiki](https://github.com/mist-devel/mist-board/wiki/ScartCable#diagram).
 
 An RS232 connection is supported via a DE-9 null modem cable.
 
-[![D9 Null Modem wiring](/images/d9_null_modem_wiring_thumb.png)](/images/d9_null_modem_wiring.png)
+<ZoomableImage src='/images/d9_null_modem_wiring_thumb.png' alt='D9 Null Modem wiring'/>
 
 As most modern PCs do not include a serial port anymore, a USB/RS232 adapter is
 also suggested.
 
-![RS232/USB Adapter](/images/ftdi_usb_serial.jpg)
+<ZoomableImage src='/images/ftdi_usb_serial.jpg' alt='RS232/USB Adapter'/>
 
 Numerous terminal applications can be used to to connect over the serial port
 such as Minicom.
@@ -115,7 +115,7 @@ and also mounting your SD Card over USB.
 
 Note, Pin 1 of the USB header is closest to the P14 label.
 
-[![USB Header](/images/overview_replay1_usb_thumb.jpg)](/images/overview_replay1_usb.jpg)
+<ZoomableImage src='/images/overview_replay1_usb_thumb.jpg' alt='USB Header'/>
 
 ::: warning Take Care
 Take _extreme_ care when using the microusb socket. It is very easy to break

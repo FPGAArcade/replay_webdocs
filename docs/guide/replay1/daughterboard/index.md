@@ -1,6 +1,6 @@
 # Overview
 
-![Daughter Board](/images/replay1/daughterboard.jpg "Replay 1 daughter board")
+<ZoomableImage src='/images/replay1/daughterboard.jpg' alt='Daughter Board'/>
 
 The 68K daughter board expands the capabilities of the Replay 1 by providing
 a socket for an optional 68060 CPU and 128MB local/fastram for use by the 68060.

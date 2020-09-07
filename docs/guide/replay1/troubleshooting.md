@@ -14,7 +14,7 @@ is connected via DVI or HDMI to a Monitor/TV and power on. If you see the
 "insert SD card" image, your hardware is working correctly and the issue is
 likely core or core setup related.
 
-![Embedded loader background](/images/embedded_loader.jpg "Embedded loader background")
+<ZoomableImage src='/images/embedded_loader.jpg' alt='Embedded loader background'/>
 
 If you do not see the "insert SD card" image and instead have either a blank screen
 or garbled display, the Replay may be set to a unsupported video mode for your
