@@ -37,7 +37,7 @@ organise your SD Card files.
 ├── loader.bin
 ├── loop.pcm
 ├── Firmware/
-│   ├── `20190616/`
+│   ├── 20190616/
 │   |   ├── rApp_NTSC_30FPS.ini
 │   |   ├── rApp_NTSC_60FPS.ini
 │   |   ├── rApp_PAL_25FPS.ini
