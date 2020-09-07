@@ -1,9 +1,7 @@
 {
   "scripts": {
     "dev": "vuepress dev docs",
-    "build": "vuepress build docs",
-    "docs:dev": "vuepress dev docs",
-    "docs:build": "vuepress build docs"
+    "build": "vuepress build docs"
   },
   "dependencies": {
     "env-smart": "^2.1.3",
