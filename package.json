@@ -2,12 +2,12 @@
   "scripts": {
     "dev": "vuepress dev docs",
     "build": "vuepress build docs",
-
     "docs:dev": "vuepress dev docs",
     "docs:build": "vuepress build docs"
   },
   "dependencies": {
-    "env-smart": "^2.1.3"
+    "env-smart": "^2.1.3",
+    "vuepress-plugin-medium-zoom": "^1.1.9"
   },
   "devDependencies": {
     "vuepress": "^1.5.4"

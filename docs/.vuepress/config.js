@@ -117,18 +117,21 @@ module.exports = {
 
   // Plugins
   plugins: [
-
     ['container', {
       type: 'vue',
       before: '<pre class="vue-container"><code>',
       after: '</code></pre>',
-    }]
-    // ['container', {
-    //   type: 'upgrade',
-    //   before: info => `<UpgradePath title="${info}">`,
-    //   after: '</UpgradePath>',
-    // }]
+    }],
 
+    ['vuepress-plugin-medium-zoom', {
+      selector: 'img.zoom-custom-img',
+      delay: 1000,
+      options: {
+        margin: 24,
+        background: '#222222',
+        scrollOffset: 0,
+      },
+    }],
   ],
 
 
