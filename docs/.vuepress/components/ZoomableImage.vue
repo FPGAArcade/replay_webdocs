@@ -10,6 +10,12 @@ Zoomable image wrapper
 
 </template>
 
+<style scoped>
+.zoom-custom-img {
+  border: solid 1px grey;
+}
+</style>
+
 <script>
 import * as path from 'path'
 
