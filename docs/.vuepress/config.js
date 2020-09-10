@@ -20,7 +20,7 @@ module.exports = {
   themeConfig: {
     // GitHub Integration
     repo: 'FPGAArcade',
-    docsRepo: 'FPGAArcade/replay_docs',
+    docsRepo: 'FPGAArcade/replay_webdocs',
     docsDir: 'docs',
     editLinks: true,
 
@@ -55,6 +55,7 @@ module.exports = {
         items: [
           {text: 'Community', link: '/community'},
           {text: 'Contribute', link: '/contributing'},
+          {text: 'FAQ', link: 'https://www.fpgaarcade.com/kbtopic/all/'},
           {text: 'News', link: 'https://www.fpgaarcade.com/news'},
           {text: 'Releases', link: 'https://build.fpgaarcade.com/releases/'}
         ]
