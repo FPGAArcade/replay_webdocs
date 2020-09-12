@@ -1,6 +1,8 @@
-# Hardware
+# Accessories
 
 <!-- TODO: What size SD cards are known to be supported?
+           class 10 recommended, up to 2TB theoretically supported
+           but only up to 200GB tested.
      TODO: PSU and mains adapter specs -->
 In order to use your Replay board you will need a few additional items:
 

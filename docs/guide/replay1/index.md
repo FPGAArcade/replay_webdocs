@@ -6,7 +6,7 @@ of “cores“.
 <ZoomableImage src='/images/overview_replay1_thumb.jpg' alt='Replay1 Board Overview'/>
 
 Whilst no longer in production, if you have managed to get your hands on one,
-the [Hardware](./hardware) section covers the additional items needed to connect
+the [Accessories](./accessories) section covers the additional items needed to connect
 and use your Replay board with a TV or Monitor.
 
 Once connected and powered on (without an SD card inserted) you should be

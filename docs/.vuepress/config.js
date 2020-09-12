@@ -72,7 +72,7 @@ module.exports = {
 
           children: [
             '/guide/replay1/',
-            '/guide/replay1/hardware',
+            '/guide/replay1/accessories',
             '/guide/replay1/sd-setup',
             '/guide/replay1/firmware-upgrade',
             '/guide/replay1/troubleshooting',
@@ -96,7 +96,10 @@ module.exports = {
           collapsable: false,
 
           children: [
-            '/guide/vidor/'
+            '/guide/vidor/',
+            '/guide/vidor/accessories',
+            '/guide/vidor/software',
+            '/guide/vidor/troubleshooting'
           ]
         }
       ],

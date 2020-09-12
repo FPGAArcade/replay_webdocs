@@ -3,7 +3,7 @@ Zoomable image wrapper
 -->
 <template>
 
-  <img class="zoom-custom-img"
+  <img class="zoom-custom-img" :class="{'zoom-custom-img--border': !noborder}"
        :src="$withBase(src)"
        :data-zoom-src="$withBase(originalSrc)"
        :alt="alt" />
@@ -11,7 +11,7 @@ Zoomable image wrapper
 </template>
 
 <style scoped>
-.zoom-custom-img {
+.zoom-custom-img--border {
   border: solid 1px grey;
 }
 </style>
@@ -32,6 +32,10 @@ export default {
     thumbSuffix: {
       default: '_thumb',
       type: String
+    },
+    noborder: {
+      default: false,
+      type: Boolean
     }
   },
 
