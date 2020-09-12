@@ -25,7 +25,7 @@ as an Arduino product, the Vidor expects a more hands-on approach.
 Before you can get started, you'll need a few additional [accessories](./accessories) to
 make use of the Vidor with the FPGA Arcade firmware.
 
-The [software](./software) section will cover loading the FPGA Arcade firmware
+The [software](./software) section covers loading the FPGA Arcade firmware
 onto the device "Arduino Style". You may also want to review the official
 Arduino [Getting Started Guide](https://www.arduino.cc/en/Guide/MKRVidor4000).
 

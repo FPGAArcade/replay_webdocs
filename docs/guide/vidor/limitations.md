@@ -8,6 +8,7 @@ subject to change.
 
 Proceed at your own risk.
 :::
+
 As a low-cost entry level FPGA device, the MKR Vidor 4000 does come with
 a few limitations when compared to the Replay device. As a hardware
 

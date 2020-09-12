@@ -53,7 +53,7 @@ Be aware, audio over HDMI is not supported.
 
 ## Input Peripherals
 
-As the Vidor has only one micro USB socket which the recommended way to connect
+As the Vidor has a single micro USB socket, the recommended way to connect
 USB peripherals is via a OTG Hub with power pass-through.
 
 A hub with power pass-through will not only allow you to connect multiple USB
