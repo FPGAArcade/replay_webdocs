@@ -47,20 +47,34 @@ To connect the Vidor to your TV or Monitor, you'll need a micro HDMI cable.
 Be aware, audio over HDMI is not supported.
 :::
 
-<!-- is hdmi reliable with enough cores? Any way to get analog out like vga?
-     what about audio?
--->
+Be aware that cores for the FPGA Arcade are written to replciate the original
+hardware as closely as possible, this includes the output video signal. The cores
+are intended to work with analogue connections e.g. Composite, Scart or VGA.
+
+The video signal is adjusted (scan doubler, timing) to bring it roughly in line
+with the HDMI specification for use with the Vidor's HDMI output. However, there
+are limitations to the adjustments that can be made without a full frame buffer.
+For this reason, some HDMI TVs and Monitors can struggle to accept the core's
+video signal.
+
+Replay 1 users will be familar with this and the common workaround of using a VGA
+connection instead. TVs/monitors appear to be more accepting of non-standard signals
+over VGA.
+
+As the vidor only has HDMI output at this time, another option is a HDMI to VGA convertor.
+Users have reported success using
+[Rankie 1080P Active HDTV HDMI to VGA Adapter](https://www.amazon.co.uk/gp/product/B00ZMV7RL2/ref=ppx_yo_dt_b_asin_title_o03_s00?ie=UTF8&psc=1)
 
 ## Input Peripherals
 
-As the Vidor has a single micro USB socket, the recommended way to connect
+Since the Vidor has a single micro USB socket, the recommended way to connect
 USB peripherals is via a OTG Hub with power pass-through.
 
 A hub with power pass-through will not only allow you to connect multiple USB
 devices to the Vidor but also power the Vidor itself all via the single micro
 USB socket.
 
-Alternatively, if you're powering the Vidor via the LiPo connector then you can
+Alternatively, if you are powering the Vidor via the LiPo connector then you can
 use a standard micro USB OTG hub.
 
 ::: tip Note
