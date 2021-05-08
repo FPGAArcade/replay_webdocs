@@ -6,6 +6,6 @@ heroText: FPGA Arcade
 tagline: Documentation
 actionText: Get Started 👻
 actionLink: /guide/
-footer: © 2019 FPGA Arcade Team - All Rights Reserved
+footer: © 2019 FPGA Arcade Team - All Rights Reserved - Powered by Vercel & VuePress
 ---
 

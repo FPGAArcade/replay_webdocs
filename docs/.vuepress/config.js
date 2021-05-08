@@ -26,6 +26,7 @@ module.exports = {
 
     // Misc
     logo: '/images/logo.png',
+    poweredby: '/images/powered-by-vercel.svg',
     lastUpdated: true,
     displayAllHeaders: false,
 
