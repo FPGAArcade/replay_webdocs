@@ -56,3 +56,7 @@ yarn dev
 ```
 
 Optionally create a ".env" file to customise the build.
+
+# Hosting
+
+![Powered By Vercel](/docs/.vuepress/public/images/powered-by-vercel.svg)
