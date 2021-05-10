@@ -59,4 +59,4 @@ Optionally create a ".env" file to customise the build.
 
 # Hosting
 
-![Powered by Vercel](/docs/.vuepress/public/images/powered-by-vercel-badge.svg)
+[![Powered by Vercel](/docs/.vuepress/public/images/powered-by-vercel-badge.svg)](https://vercel.com/?utm_source=fpgaarcade&utm_campaign=oss)
