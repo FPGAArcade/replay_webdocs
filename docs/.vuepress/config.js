@@ -26,7 +26,8 @@ module.exports = {
 
     // Misc
     logo: '/images/logo.png',
-    poweredby: '/images/powered-by-vercel.svg',
+    poweredby: '/images/powered-by-vercel.png',
+    poweredbylink: 'https://vercel.com?utm_source=fpgaarcade&utm_campaign=oss',
     lastUpdated: true,
     displayAllHeaders: false,
 

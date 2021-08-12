@@ -1,11 +1,12 @@
 <template>
   <ParentLayout>
     <template #page-bottom>
-      <div>
-        <img v-if="$site.themeConfig.poweredby"
-             class="poweredby"
-             :src="$withBase($site.themeConfig.poweredby)"
-        >
+      <div v-if="$site.themeConfig.poweredby" class="poweredby" >
+        <span>Powered by</span>
+        <a :href="$site.themeConfig.poweredbylink">
+          <img class="poweredby__logo"
+               :src="$withBase($site.themeConfig.poweredby)">
+        </a>
       </div>
     </template>
   </ParentLayout>
@@ -13,9 +14,14 @@
 
 <style scoped>
 .poweredby {
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.poweredby__logo {
+  margin-left: 1em;
 }
 </style>
 
