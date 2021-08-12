@@ -99,7 +99,7 @@ module.exports = {
           children: [
             '/guide/vidor/',
             '/guide/vidor/accessories',
-            '/guide/vidor/software',
+            '/guide/vidor/firmware',
             '/guide/vidor/troubleshooting'
           ]
         }

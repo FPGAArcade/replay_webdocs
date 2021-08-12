@@ -1,4 +1,4 @@
-# Software
+# Firmware
 
 ::: warning Draft
 This documentation is a work in progress and has not been reviewed for accuracy.
@@ -9,25 +9,23 @@ subject to change.
 Proceed at your own risk.
 :::
 
-Coming Soon(tm)
+## Pre-requisites
 
-<!--
-TODO... firmware programming, core loading etc
 
-)    (Software required for Flashing card)
-a) You need this to flash the firmware. This requires the Arduino framework.
-You need to download and install the Arduino IDE so you can update the Vidor 4000 computer.
-https://www.arduino.cc/en/Main/Software (Windows/Mac/Linux).
-Note: For windows people it will default now to the windows store.
-https://www.microsoft.com/en-us/p/arduino-ide/9nblggh4rsd8?activetab=pivot:overviewtab
+In order to upload the Replay firmware to your Vidor you will need install and configure
+the [Arduino Software (IDE)](https://www.arduino.cc/en/Main/Software).
 
-b) Next under the Arduino IDE “Tools” menu, select under this the option “Boards:xxxxx” and select the “Boards Manager”
-Next in the “type” searchbox at the top, type in “Vidor” and when the boards appear in the list, select the option Arduino SAMD Boards (32bits arm cortex-m0+).
-On the bottom right of this board, you will see a select box. Select v1.8.6 or above and click the Install button.
-Along the way, you will get popup boxes saying to install “Arduino USB Driver” and “Adafruit industries LLC Ports” make sure you install both of these.
-Also a java se popup install will appear, also make sure you install this.
+Once installed open the Arduino IDE and from the "Tools/Boards" menu select the “Boards Manager”.
+Enter "Vidor" in the “type” search box and select the Arduino SAMD Boards (32bits arm cortex-m0+).
+Select v1.8.6 or above and click the "Install" button.
 
-Also download the Vidor 4000 firmware…https://github.com/FPGAArcade/replay_release/tree/master/firmware/mkrvidor4000
+You will be prompted and should accept the installation of the “Arduino USB Driver”, “Adafruit industries LLC Ports” and "Java SE".
+
+Download the latest version of the [Vidor4000 Replay firmware](https://github.com/FPGAArcade/replay_release/tree/master/firmware/mkrvidor4000)
+
+## Flashing
+
+TODO:-
 Format an sdcard also eg: 16gig card and fat32 or exfat and or put the image or and its files on the sdcard.
 Card orientation will be..ie 5v to 5v etc and with sd card end toward mini pci connector.
 
