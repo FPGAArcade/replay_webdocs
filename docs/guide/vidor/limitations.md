@@ -10,13 +10,14 @@ Proceed at your own risk.
 :::
 
 As a low-cost entry level FPGA device, the MKR Vidor 4000 does come with
-a few limitations when compared to the Replay device. As a hardware
+a few limitations when compared to the Replay device.
 
-It is not all doom and gloom however. As an open-source hardware and software
-platform, the MKR Vidor 4000 is also ripe for tinkering, expanding and
-perhaps overcoming many of the items listed below.
 
 Details Coming Soon(tm)
 
 <!-- TODO: Fill in the limitations section, maybe rename to indicate as
      future projects for community -->
+
+It is not all doom and gloom however. As an open-source hardware and software
+platform, the MKR Vidor 4000 is also ripe for tinkering, expanding and
+perhaps overcoming many of the current limitations.
