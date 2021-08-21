@@ -101,6 +101,7 @@ module.exports = {
             '/guide/vidor/',
             '/guide/vidor/accessories',
             '/guide/vidor/firmware',
+            '/guide/vidor/sd-setup',
             '/guide/vidor/troubleshooting'
           ]
         }

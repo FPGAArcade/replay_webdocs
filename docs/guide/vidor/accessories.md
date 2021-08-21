@@ -47,7 +47,7 @@ To connect the Vidor to your TV or Monitor, you'll need a micro HDMI cable.
 Be aware, audio over HDMI is not supported.
 :::
 
-Be aware that cores for the FPGA Arcade are written to replciate the original
+Be aware that cores for the FPGA Arcade are written to replicate the original
 hardware as closely as possible, this includes the output video signal. The cores
 are intended to work with analogue connections e.g. Composite, Scart or VGA.
 
