@@ -19,8 +19,10 @@ Required:-
  - USB A to micro USB B cable for programming via PC.
  - USB Keyboard
 
+
 Recommended:-
  - USB OTG hub with power pass-through
+ - [I2S Stereo Decoder](https://www.adafruit.com/product/3678)
 
 ## Powering the Vidor
 
@@ -39,6 +41,18 @@ A USB OTG hub with "power pass-through" is recommended. Multiple USB devices
 can then be connected in addition to powering the Vidor via the single Micro USB socket
 :::
 
+## Audio Output
+
+3.5mm Stereo audio output requires an I2S stereo decoder such as the
+[ada fruit I2S](https://www.adafruit.com/product/3678).
+
+| Vidor Pin  | I2S   |
+| -----------|-------|
+| A4         | LRCIN/WSEL  |
+| A5         | BCLK  |
+| A6         | DIN   |
+
+Additional pinouts can be found on the [Firmware Release page](https://github.com/FPGAArcade/replay_mkrvidor4000)
 ## Video Output
 
 To connect the Vidor to your TV or Monitor, you'll need a micro HDMI cable.
