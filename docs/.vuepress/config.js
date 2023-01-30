@@ -48,6 +48,9 @@ module.exports = {
           {text: 'Wireless Controllers', link: '/diy/wireless-controller-adapter'}
         ]
       },
+      {
+        text: 'Cores', link: '/cores/'
+      },
       // {text: 'User Manual', items: [
       //    {text: 'Replay 1', link: '/manual/replay1/'},
       //    {text: 'MKR Vidor 4000', link: '/manual/vidor/'}
