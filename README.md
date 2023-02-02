@@ -51,8 +51,8 @@ Refer to the VuePress site for further information on containers.
 For local development:
 
 ```
-yarn install
-yarn dev
+npm install
+npm dev
 ```
 
 Optionally create a ".env" file to customise the build.
