@@ -1,11 +1,11 @@
 <template>
   <div>
     <ul class="platform-filters">
-      <li class="platform-filter" v-for="platform in platforms.platforms" :key="platform.id" @click="emitSelectCore(platform.id)" data-id="platform.id" :active="selectedPlatform == platform.id">
+      <li class="platform-filter" v-for="platform in platforms.platforms" :key="platform.id" @click="selectPlatform(platform.id)" data-id="platform.id" :active="selectedPlatform == platform.id">
         {{ platform.name }}
       </li>
     </ul>
-    <PlatformView :selected-platform="selectedPlatform" :key="filterKey"/>
+    <PlatformView :selected-platform="selectedPlatform" :key="filterKey" :select-core="selectCore" />
   </div>
 </template>
 
@@ -18,9 +18,12 @@ export default {
     selectedPlatform: {
       type: String
     },
-    selectCore: {
+    selectPlatform: {
       type: Function
     },
+    selectCore: {
+      type: Function
+    }
   },
 
   data() {
@@ -38,9 +41,6 @@ export default {
   },
 
   methods: {
-    emitSelectCore(id) { 
-      this.selectCore(id) 
-    }
   }
 }
 </script>

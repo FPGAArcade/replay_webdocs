@@ -1,7 +1,7 @@
 <template>
   <div>
     <div v-if="hasCores">
-      <CoreCard v-for="core in platformData" :key="core.id" :core="core" />
+      <CoreCard v-for="core in platformData" :key="core.id" :core="core" :show-details="true" :select-core="selectCore" />
     </div>
     <div v-else-if="loading"></div>
     <div v-else>
@@ -11,10 +11,31 @@
 </template>
 
 <script>
+
+const sortByBuildDate = (arr) => {
+  return arr.sort(function(a,b){
+    return new Date(b.buildDate) - new Date(a.buildDate)
+  })
+}
+
+const getUniqBy = (arr, prop) => {
+  const set = new Set;
+  return arr.filter(o => !set.has(o[prop]) && set.add(o[prop]));
+};
+
+const sortByCoreName = (arr) => {
+  return arr.sort(function(a, b) {
+     return a.coreId.localeCompare(b.coreId);
+  });
+}
+
 export default {
   props: {
     selectedPlatform: {
       type: String
+    },
+    selectCore: {
+      type: Function
     },
   },
   data() {
@@ -36,7 +57,14 @@ export default {
     async getForPlatform(platform) {
       let res = await fetch(`${this.$themeConfig.replayAPI}/builds?platforms=${platform}&buildType=core`)
 
-      this.platformData = await res.json()
+
+      let platformData = await res.json()
+      platformData = sortByBuildDate(platformData)
+      platformData = getUniqBy(platformData, "coreId")
+      platformData = sortByCoreName(platformData)
+
+      this.platformData = platformData
+
       if(this.platformData.length > 0) {
         this.hasCores = true
       } else {

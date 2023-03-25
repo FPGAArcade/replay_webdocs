@@ -4,14 +4,16 @@
       <div class="core-name">
       {{ core.coreId }}
       </div>
-      <div class="core-tags">
-        <CoreTag v-for="release in core.releaseTrain" :tag-name="release" :tag-date="getTagDate(release)" />
-      </div>
     </div> 
     <div class="core-download">
       <a target="_blank" :href="core.downloadURL">
-        download
+        <div class="core-download-download">Download</div>
+        <div class="core-download-subtext">latest stable</div>
       </a>
+
+      <div v-if="this.showDetails === true" class="core-other-builds">
+        <span @click="selectCore(core.coreId)" href="">other builds</span>
+      </div>
     </div>
   </div>
 </template>
@@ -19,6 +21,12 @@
 <script>
 export default {
   props: {
+    showDetails: {
+      type: Boolean
+    },
+    selectCore: {
+      type: Function
+    },
     core: {
       type: Object
     },
@@ -58,7 +66,7 @@ export default {
   display: flex;
   justify-content: space-between;
 }
-.core-download a {
+.core-download > a {
   display: inline-block;
   font-size: 1rem;
   color: #fff;
@@ -68,15 +76,36 @@ export default {
   transition: background-color 0.1s ease;
   box-sizing: border-box;
   border-bottom: 1px solid #d44617;
+  margin-bottom: 1rem;
+}
+.core-download {
+  text-align: center;
+}
+.core-download-download {
+  text-align: center;
+}
+.core-download-subtext {
+  text-align: center;
+  font-size: 0.6rem;
 }
 
+.core-other-builds {
+  font-size: 0.8rem;
+  text-decoration: underline;
+  color: #222;
+  cursor: pointer;
+}
+
+.core-other-builds > span {
+  pointer: cursor;
+  font-size: 0.8rem;
+  text-decoration: underline;
+  color: #222;
+}
 
 @media (max-width: 500px) {
   .core-wrapper {
     flex-direction: column;
-  }
-  .core-download {
-    text-align: right;
   }
 }
 </style>
