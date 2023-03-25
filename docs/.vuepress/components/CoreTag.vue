@@ -54,6 +54,12 @@ export default {
   filter: drop-shadow(1px 1px 1px #ddc894);
 }
 
+.core-tag-release.testing {
+  background-color: #DEDFFB;
+  border: 1px solid #DEDFFB;
+  filter: drop-shadow(1px 1px 1px #afb9ad);
+}
+
 .core-tag-release.stable {
   background-color: #cff3ca;
   border: 1px solid #cff3ca;
