@@ -5,13 +5,12 @@
       {{ core.coreId }}
       </div>
     </div> 
-    <div class="core-download">
+    <div class="core-download" v-if="this.showDetails === true" >
       <a target="_blank" :href="core.downloadURL">
         <div class="core-download-download">Download</div>
         <div class="core-download-subtext">latest stable</div>
       </a>
-
-      <div v-if="this.showDetails === true" class="core-other-builds">
+      <div class="core-other-builds">
         <span @click="selectCore(core.coreId)" href="">other builds</span>
       </div>
     </div>

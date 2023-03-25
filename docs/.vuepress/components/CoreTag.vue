@@ -1,7 +1,6 @@
 <template>
   <div class="core-tag">
     <div :class="releaseClassName">{{tagName}}</div>
-    <div class="core-tag-date">{{convertDateToLocale}}</div>
   </div>
 </template>
 
@@ -10,9 +9,6 @@ export default {
   props: {
     tagName: {
       type: String
-    },
-    tagDate: {
-      type: Number
     },
   },
   data() {

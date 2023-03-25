@@ -10,7 +10,11 @@
     </div>
     <div v-else>
       <div class="core-page-back-button" @click="this.disableCorePage">Back</div>
-      <CoreView :show-details="false" :select-core="this.selectCore" :selected-platform="this.selectedPlatform" :selected-core="this.corePageSelectedCore" />
+      <CoreView 
+        :select-core="this.selectCore" 
+        :selected-platform="this.selectedPlatform" 
+        :selected-core="this.corePageSelectedCore" 
+      />
     </div>
   </div>
 </template>
