@@ -3,6 +3,8 @@
 node_modules
 /dist
 docs/.vuepress/dist
+docs/.vuepress/.cache
+docs/.vuepress/.temp
 
 .env
 
