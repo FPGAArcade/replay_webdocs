@@ -44,13 +44,6 @@ export default {
     }
   },
 
-  beforeMount() {
-    this.getForPlatform(this.selectedPlatform)
-  },
-
-  computed: {
-  },
-
   methods: {
     async getForPlatform(platform) {
       this.loading = true
@@ -75,11 +68,15 @@ export default {
   },
 
   watch: {
-    selectedPlatform(newVal, oldVal) {
-      if (newVal === oldVal)
-        return
-
-      this.getForPlatform(newVal)
+    
+    selectedPlatform: {
+      handler(newVal, oldVal) {
+        if (newVal === oldVal)
+          return
+        
+        this.getForPlatform(newVal)
+      },
+      immediate: true
     }
   }
 }
