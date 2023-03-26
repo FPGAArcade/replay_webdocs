@@ -1,4 +1,7 @@
-require('env-smart').load()
+import { defaultTheme } from "vuepress"
+import env from 'env-smart'
+
+env.load()
 
 function getEnv(key, envDefault) {
   if (process.env[key])
@@ -13,11 +16,11 @@ function getEnv(key, envDefault) {
   process.exit(1)
 }
 
-module.exports = {
+export default {
   title: 'FPGA Arcade',
   description: 'Documentation for FPGA Arcade projects.',
 
-  themeConfig: {
+  theme: defaultTheme({
     // GitHub Integration
     repo: 'FPGAArcade',
     docsRepo: 'FPGAArcade/replay_webdocs',
@@ -34,17 +37,17 @@ module.exports = {
     replayAPI: getEnv('VUE_APP_REPLAY_API'),
 
     // Menus
-    nav: [
+    navbar: [
       {
         text: 'Get Started',
-        items: [
+        children: [
           {text: 'Replay 1 (R1)', link: '/guide/replay1/'},
           {text: 'MKR Vidor 4000 (V4)', link: '/guide/vidor/'}
         ]
       },
       {
         text: 'DIY',
-        items: [
+        children: [
           {text: 'Wireless Controllers', link: '/diy/wireless-controller-adapter'}
         ]
       },
@@ -57,7 +60,7 @@ module.exports = {
       // ]},
       {
         text: 'Links',
-        items: [
+        children: [
           {text: 'Community', link: '/community'},
           {text: 'Contribute', link: '/contributing'},
           {text: 'FAQ', link: 'https://www.fpgaarcade.com/kbtopic/all/'},
@@ -123,7 +126,7 @@ module.exports = {
         '/contributing'
       ]
     }
-  },
+  }),
 
   // Plugins
   plugins: [
