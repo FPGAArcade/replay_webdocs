@@ -2,7 +2,7 @@
   <div>
     <div v-if="hasVisibleCorePage">
       <PlatformFilter 
-        :platforms={platforms}
+        :platforms="platforms"
         :selected-platform="selectedPlatform"
         @select-core="selectCore"
         @select-platform="selectPlatform" 
@@ -21,7 +21,12 @@
 
 <script>
 export default {
-  props: ['platforms'],
+  props: {
+    platforms: {
+      type: Array,
+      required: true
+    }
+  },
 
   data() {
     return {

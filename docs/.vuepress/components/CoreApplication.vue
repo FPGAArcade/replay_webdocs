@@ -8,7 +8,7 @@
 export default {
   data() {
     return {
-      platforms: {},
+      platforms: [],
     }
   },
 
@@ -20,7 +20,7 @@ export default {
 
   methods: {
     async getPlatforms() {
-      let res = await fetch(`${this.$theme.replayAPI}/platforms/`)
+      let res = await fetch(`${this.$theme.replayAPI}/platforms/`)      
       this.platforms = await res.json()
     },
   }

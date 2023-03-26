@@ -28,16 +28,6 @@ export default {
       type: Object
     },
   },
-  data() {
-    return {
-    }
-  },
-
-  beforeMount() {
-  },
-
-  computed: {
-  },
 
   methods: {
     getTagDate(release) {

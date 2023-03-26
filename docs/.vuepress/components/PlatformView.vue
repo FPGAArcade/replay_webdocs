@@ -1,9 +1,9 @@
 <template>
   <div>
-    <div v-if="hasCores">
+    <div v-if="loading">Fetching cores...</div>
+    <div v-else-if="hasCores">
       <CoreCard v-for="core in platformData" :key="core.id" :core="core" :show-details="true" @select-core="$event => $emit('select-core', $event)" />
     </div>
-    <div v-else-if="loading"></div>
     <div v-else>
       No Cores Available
     </div>
@@ -53,8 +53,9 @@ export default {
 
   methods: {
     async getForPlatform(platform) {
-      let res = await fetch(`${this.$theme.replayAPI}/builds?platforms=${platform}&buildType=core`)
+      this.loading = true
 
+      let res = await fetch(`${this.$theme.replayAPI}/builds?platforms=${platform}&buildType=core`)
 
       let platformData = await res.json()
       platformData = sortByBuildDate(platformData)
@@ -70,6 +71,15 @@ export default {
       }
       
       this.loading = false
+    }
+  },
+
+  watch: {
+    selectedPlatform(newVal, oldVal) {
+      if (newVal === oldVal)
+        return
+
+      this.getForPlatform(newVal)
     }
   }
 }
