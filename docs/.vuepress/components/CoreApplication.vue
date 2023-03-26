@@ -20,7 +20,7 @@ export default {
 
   methods: {
     async getPlatforms() {
-      let res = await fetch(`${this.$themeConfig.replayAPI}/platforms/`)
+      let res = await fetch(`${this.$theme.replayAPI}/platforms/`)
       this.platforms = await res.json()
     },
   }

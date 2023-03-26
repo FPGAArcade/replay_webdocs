@@ -1,4 +1,14 @@
-require('env-smart').load()
+import { registerComponentsPlugin } from '@vuepress/plugin-register-components'
+import { getDirname, path } from '@vuepress/utils'
+import { defaultTheme } from "vuepress"
+import { containerPlugin } from '@vuepress/plugin-container'
+import { mediumZoomPlugin } from '@vuepress/plugin-medium-zoom'
+
+import env from 'env-smart'
+
+env.load()
+
+const __dirname = getDirname(import.meta.url)
 
 function getEnv(key, envDefault) {
   if (process.env[key])
@@ -13,11 +23,11 @@ function getEnv(key, envDefault) {
   process.exit(1)
 }
 
-module.exports = {
+export default {
   title: 'FPGA Arcade',
   description: 'Documentation for FPGA Arcade projects.',
 
-  themeConfig: {
+  theme: defaultTheme({
     // GitHub Integration
     repo: 'FPGAArcade',
     docsRepo: 'FPGAArcade/replay_webdocs',
@@ -34,17 +44,17 @@ module.exports = {
     replayAPI: getEnv('VUE_APP_REPLAY_API'),
 
     // Menus
-    nav: [
+    navbar: [
       {
         text: 'Get Started',
-        items: [
+        children: [
           {text: 'Replay 1 (R1)', link: '/guide/replay1/'},
           {text: 'MKR Vidor 4000 (V4)', link: '/guide/vidor/'}
         ]
       },
       {
         text: 'DIY',
-        items: [
+        children: [
           {text: 'Wireless Controllers', link: '/diy/wireless-controller-adapter'}
         ]
       },
@@ -57,7 +67,7 @@ module.exports = {
       // ]},
       {
         text: 'Links',
-        items: [
+        children: [
           {text: 'Community', link: '/community'},
           {text: 'Contribute', link: '/contributing'},
           {text: 'FAQ', link: 'https://www.fpgaarcade.com/kbtopic/all/'},
@@ -111,11 +121,11 @@ module.exports = {
       ],
 
       // User Manual
-      '/manual/replay1/': [
-        {
-          title: 'User Manual',
-        }
-      ],
+      // '/manual/replay1/': [
+      //   {
+      //     title: 'User Manual',
+      //   }
+      // ],
 
       // Fallback
       '/': [
@@ -123,26 +133,29 @@ module.exports = {
         '/contributing'
       ]
     }
-  },
+  }),
 
   // Plugins
   plugins: [
-    ['container', {
+    containerPlugin({
       type: 'vue',
-      before: '<pre class="vue-container"><code>',
-      after: '</code></pre>',
-    }],
+      before: () => '<pre class="vue-container"><code>',
+      after: () => '</code></pre>',
+    }),
 
-    ['vuepress-plugin-medium-zoom', {
+    mediumZoomPlugin({
       selector: 'img.zoom-custom-img',
       delay: 1000,
-      options: {
+      zoomOptions: {
         margin: 24,
         background: '#222222',
         scrollOffset: 0,
       },
-    }],
-  ],
+    }),
 
+    registerComponentsPlugin({
+      componentsDir: path.resolve(__dirname, './components'),
+    }),
 
+  ]
 }

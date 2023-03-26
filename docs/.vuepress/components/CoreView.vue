@@ -37,7 +37,7 @@ export default {
     async getCore() {
       let platform = this.selectedPlatform
       let core = this.selectedCore
-      let res = await fetch(`${this.$themeConfig.replayAPI}/builds?platforms=${platform}&buildType=core&platforms=${platform}&cores=${core}&desc=true`)
+      let res = await fetch(`${this.$theme.replayAPI}/builds?platforms=${platform}&buildType=core&cores=${core}&desc=true`)
       let json = await res.json()
       console.log(json)
       // Just take the first one for now

@@ -17,8 +17,6 @@ Zoomable image wrapper
 </style>
 
 <script>
-import * as path from 'path'
-
 export default {
   props: {
     src: {
@@ -41,14 +39,15 @@ export default {
 
   computed: {
     originalSrc() {
-      if (!this.thumbSuffix)
+     if (!this.thumbSuffix)
         return this.src
 
-      const ext = path.extname(this.src)
-      const filename = path.basename(this.src, ext)
+      const extIdx = this.src.lastIndexOf('.')
+      const ext = this.src.slice(extIdx)
+      const filename = this.src.slice(this.src.lastIndexOf('/'), extIdx)
+
       if (filename.endsWith(this.thumbSuffix))
-        return path.join(path.dirname(this.src),
-               path.basename(this.src, ext).slice(0,-this.thumbSuffix.length) + ext)
+        return this.src.slice(0, -(this.thumbSuffix.length+ext.length)) + ext
 
       return this.src
     }
