@@ -1,16 +1,14 @@
 <template>
   <div>
-    <CoreCard :core="core" :select-core="selectCore.selectCore" />
+    <CoreCard :core="core" @select-core="$event => $emit('select-core', $event)" />
     <CoreBuilds :cores="cores" />
   </div>
 </template>
 
 <script>
 export default {
+  emits: ['select-core'],
   props: {
-    selectCore: {
-      type: Function
-    },
     selectedCore: {
       type: String
     },

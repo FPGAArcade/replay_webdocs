@@ -2,18 +2,18 @@
   <div>
     <div v-if="hasVisibleCorePage">
       <PlatformFilter 
-        :platforms={platforms} 
-        :select-core="this.selectCore"
-        :selected-platform="this.selectedPlatform"
-        :select-platform="this.selectPlatform" 
+        :platforms={platforms}
+        :selected-platform="selectedPlatform"
+        @select-core="selectCore"
+        @select-platform="selectPlatform" 
       />
     </div>
     <div v-else>
-      <div class="core-page-back-button" @click="this.disableCorePage">Back</div>
+      <div class="core-page-back-button" @click="disableCorePage">Back</div>
       <CoreView 
-        :select-core="this.selectCore" 
-        :selected-platform="this.selectedPlatform" 
-        :selected-core="this.corePageSelectedCore" 
+        :selected-core="corePageSelectedCore" 
+        :selected-platform="selectedPlatform" 
+        @select-core="selectCore" 
       />
     </div>
   </div>

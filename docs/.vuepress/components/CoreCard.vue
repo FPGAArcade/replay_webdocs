@@ -11,7 +11,7 @@
         <div class="core-download-subtext">latest stable</div>
       </a>
       <div class="core-other-builds">
-        <span @click="selectCore(core.coreId)" href="">other builds</span>
+        <span @click="$emit('select-core', core.coreId)" href="">other builds</span>
       </div>
     </div>
   </div>
@@ -19,12 +19,10 @@
 
 <script>
 export default {
+  emits: ['select-core'],
   props: {
     showDetails: {
       type: Boolean
-    },
-    selectCore: {
-      type: Function
     },
     core: {
       type: Object

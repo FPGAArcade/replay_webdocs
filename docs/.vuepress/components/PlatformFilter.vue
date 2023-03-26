@@ -1,16 +1,17 @@
 <template>
   <div>
     <ul class="platform-filters">
-      <li class="platform-filter" v-for="platform in platforms.platforms" :key="platform.id" @click="selectPlatform(platform.id)" data-id="platform.id" :active="selectedPlatform == platform.id">
+      <li class="platform-filter" v-for="platform in platforms.platforms" :key="platform.id" @click="$emit('select-platform', platform.id)" data-id="platform.id" :active="selectedPlatform == platform.id">
         {{ platform.name }}
       </li>
     </ul>
-    <PlatformView :selected-platform="selectedPlatform" :key="filterKey" :select-core="selectCore" />
+    <PlatformView :selected-platform="selectedPlatform" :key="filterKey" @select-core="$event => $emit('select-core', $event)" />
   </div>
 </template>
 
 <script>
 export default {
+  emits: ['select-core', 'select-platform'],
   props: {
     platforms: {
       type: Object
@@ -18,12 +19,6 @@ export default {
     selectedPlatform: {
       type: String
     },
-    selectPlatform: {
-      type: Function
-    },
-    selectCore: {
-      type: Function
-    }
   },
 
   data() {

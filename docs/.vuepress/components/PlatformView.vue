@@ -1,7 +1,7 @@
 <template>
   <div>
     <div v-if="hasCores">
-      <CoreCard v-for="core in platformData" :key="core.id" :core="core" :show-details="true" :select-core="selectCore" />
+      <CoreCard v-for="core in platformData" :key="core.id" :core="core" :show-details="true" @select-core="$event => $emit('select-core', $event)" />
     </div>
     <div v-else-if="loading"></div>
     <div v-else>
@@ -30,12 +30,10 @@ const sortByCoreName = (arr) => {
 }
 
 export default {
+  emits: ['select-core'],
   props: {
     selectedPlatform: {
       type: String
-    },
-    selectCore: {
-      type: Function
     },
   },
   data() {
