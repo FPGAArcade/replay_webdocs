@@ -8,7 +8,8 @@
     "vuepress-plugin-medium-zoom": "^1.1.9"
   },
   "devDependencies": {
-    "vuepress": "^1.9.8"
+    "vuepress": "^1.9.8",
+    "@vue/devtools": "^6.5.0"
   },
   "version": "0.0.1"
 }
