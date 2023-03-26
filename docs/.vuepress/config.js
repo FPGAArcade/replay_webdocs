@@ -121,11 +121,11 @@ export default {
       ],
 
       // User Manual
-      '/manual/replay1/': [
-        {
-          title: 'User Manual',
-        }
-      ],
+      // '/manual/replay1/': [
+      //   {
+      //     title: 'User Manual',
+      //   }
+      // ],
 
       // Fallback
       '/': [

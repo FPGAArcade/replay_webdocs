@@ -1,0 +1,54 @@
+:root {
+  --c-brand: rgb(231, 80, 30);
+  --c-brand-light: rgb(231, 80, 30);
+  
+  --c-bg-navbar: rgb(22, 22, 22);
+}
+
+html.dark {
+  --c-brand: rgb(231, 80, 30);
+  --c-brand-light: rgb(231, 80, 30);
+  
+  --c-bg-navbar: rgb(22, 22, 22);
+}
+
+pre.vue-container {
+  border-left-width: .5rem;
+  border-left-style: solid;
+  border-color: var(--c-brand);
+  background-color: var(--code-bg-color);
+
+  & > code > p{
+    margin: -5px 0 -20px 0;
+  }
+}
+
+// Style just the navbar through overrides
+.theme-container {
+   .navbar {
+     --c-text: #a1a1a1;
+    
+    .navbar-items a, .links {
+      color: var(--c-text)
+    }
+
+    .site-name {
+      --c-text: #a1a1a1;
+
+      &.can-hide {
+        display: none;
+      }
+    }
+
+    .nav-links a:hover, .nav-links a.router-link-active {
+      color: var(--c-text-accent);
+    }
+
+    .navbar-dropdown-wrapper .navbar-dropdown {
+      background-color: var(--c-bg-navbar);
+      border: none;
+      border-top: 3px solid var(--c-brand);
+      border-radius: 0px;
+    }
+   }
+}
