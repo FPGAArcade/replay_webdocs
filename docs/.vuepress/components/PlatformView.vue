@@ -55,7 +55,7 @@ export default {
 
   methods: {
     async getForPlatform(platform) {
-      let res = await fetch(`${this.$themeConfig.replayAPI}/builds?platforms=${platform}&buildType=core`)
+      let res = await fetch(`${this.$theme.replayAPI}/builds?platforms=${platform}&buildType=core`)
 
 
       let platformData = await res.json()

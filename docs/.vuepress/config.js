@@ -1,7 +1,14 @@
+import { registerComponentsPlugin } from '@vuepress/plugin-register-components'
+import { getDirname, path } from '@vuepress/utils'
 import { defaultTheme } from "vuepress"
+import { containerPlugin } from '@vuepress/plugin-container'
+import { mediumZoomPlugin } from '@vuepress/plugin-medium-zoom'
+
 import env from 'env-smart'
 
 env.load()
+
+const __dirname = getDirname(import.meta.url)
 
 function getEnv(key, envDefault) {
   if (process.env[key])
@@ -130,22 +137,25 @@ export default {
 
   // Plugins
   plugins: [
-    ['container', {
+    containerPlugin({
       type: 'vue',
-      before: '<pre class="vue-container"><code>',
-      after: '</code></pre>',
-    }],
+      before: () => '<pre class="vue-container"><code>',
+      after: () => '</code></pre>',
+    }),
 
-    ['vuepress-plugin-medium-zoom', {
+    mediumZoomPlugin({
       selector: 'img.zoom-custom-img',
       delay: 1000,
-      options: {
+      zoomOptions: {
         margin: 24,
         background: '#222222',
         scrollOffset: 0,
       },
-    }],
-  ],
+    }),
 
+    registerComponentsPlugin({
+      componentsDir: path.resolve(__dirname, './components'),
+    }),
 
+  ]
 }
