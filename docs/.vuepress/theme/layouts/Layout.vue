@@ -1,11 +1,11 @@
 <template>
   <ParentLayout>
     <template #page-bottom>
-      <div v-if="$site.themeConfig.poweredby" class="poweredby" >
+      <div v-if="$theme.poweredby" class="poweredby" >
         <span>Powered by</span>
-        <a :href="$site.themeConfig.poweredbylink">
+        <a :href="$theme.poweredbylink">
           <img class="poweredby__logo"
-               :src="$withBase($site.themeConfig.poweredby)">
+               :src="$withBase($theme.poweredby)">
         </a>
       </div>
     </template>
@@ -26,7 +26,7 @@
 </style>
 
 <script>
-import ParentLayout from '@parent-theme/layouts/Layout.vue'
+import ParentLayout from '@vuepress/theme-default/layouts/Layout.vue'
 
 export default {
   name: 'Layout',
