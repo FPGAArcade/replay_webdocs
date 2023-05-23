@@ -20,7 +20,25 @@ const sortByBuildDate = (arr) => {
 
 const getUniqBy = (arr, prop) => {
   const set = new Set;
-  return arr.filter(o => !set.has(o[prop]) && set.add(o[prop]));
+  return arr.filter(o => {
+    if(!set.has(o[prop])) {
+      let stable = arr.find(c => {
+        if(o[prop] == c.coreId && c.releaseTrain.includes("stable")) {
+          return true
+        }
+        return false
+      })
+      if(stable && o == stable) {
+        set.add(o[prop])
+        return true
+      } 
+      if(!stable) {
+        set.add(o[prop])
+        return true
+      }
+      return false
+    }
+  });
 };
 
 const sortByCoreName = (arr) => {

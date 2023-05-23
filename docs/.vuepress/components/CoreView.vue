@@ -37,8 +37,6 @@ export default {
       let core = this.selectedCore
       let res = await fetch(`${this.$theme.replayAPI}/builds?platforms=${platform}&buildType=core&cores=${core}&desc=true`)
       let json = await res.json()
-      console.log(json)
-      // Just take the first one for now
       this.core = json[0]
       this.cores = json
     }

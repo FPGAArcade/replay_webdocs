@@ -6,10 +6,18 @@
       </div>
     </div> 
     <div class="core-download" v-if="this.showDetails === true" >
-      <a target="_blank" :href="core.downloadURL">
-        <div class="core-download-download">Download</div>
-        <div class="core-download-subtext">latest stable</div>
-      </a>
+      <div v-if="isStable">
+        <a class="download-button" target="_blank" :href="core.downloadURL">
+          <div class="core-download-download">Download</div>
+          <div class="core-download-subtext">latest stable</div>
+        </a>
+      </div>
+      <div v-else>
+        <div class="download-button disabled">
+          <div class="core-download-download">Download</div>
+          <div class="core-download-subtext">&nbsp;</div>
+        </div>
+      </div>
       <div class="core-other-builds">
         <span @click="$emit('select-core', core.coreId)" href="">other builds</span>
       </div>
@@ -28,7 +36,14 @@ export default {
       type: Object
     },
   },
-
+  computed: {
+    isStable(core) {
+      if(this.core.releaseTrain.includes("stable")) {
+        return true
+      } 
+      return false
+    },
+  },
   methods: {
     getTagDate(release) {
       return this.core.releaseDate[release]
@@ -53,7 +68,7 @@ export default {
   display: flex;
   justify-content: space-between;
 }
-.core-download > a {
+.core-download .download-button {
   display: inline-block;
   font-size: 1rem;
   color: #fff;
@@ -65,6 +80,20 @@ export default {
   border-bottom: 1px solid #d44617;
   margin-bottom: 1rem;
 }
+
+.core-download .download-button.disabled {
+  display: inline-block;
+  font-size: 1rem;
+  color: #ddd;
+  background-color: #AAA;
+  padding: 0.4rem 1rem;
+  border-radius: 4px;
+  transition: background-color 0.1s ease;
+  box-sizing: border-box;
+  border-bottom: 1px solid #CCC;
+  margin-bottom: 1rem;
+}
+
 .core-download {
   text-align: center;
 }
